@@ -1,46 +1,44 @@
 # Contexto do Projeto Synergia Cont7 - UNIFACC Cuiabá
 
-Este documento resume as solicitações do Prof. Renato Rosa e as implementações realizadas para a plataforma de perícia e auditoria contábil.
+Este documento oficial detalha a arquitetura, o escopo técnico e as diretrizes pedagógicas aplicadas ao projeto de integração das disciplinas de Contabilidade, Perícia e Agronegócio para a turma de 2026.
 
-## 📋 Nova Configuração (Maio 2026)
+## 📋 Escopo e Requisitos do Projeto
 
-### 1. Pivotagem do Projeto
-- **Pedido**: Alterar o foco total do projeto para a disciplina de Contabilidade (Perícia, Auditoria e Agronegócio). Remover todos os mapas e grupos antigos.
-- **Caso Problemático**: "O Labirinto da Terra Solidária: Entre o Teto e a Terra".
-- **Ações**: 
-    - Remoção de todos os arquivos de mapas e grupos anteriores.
-    - Redesenho da `index.html` com estética investigativa e foco no conflito fundiário/contábil de Várzea Grande (Pai André).
+### 1. Pivotagem e Foco Temático
+- **Objetivo**: Transição total da plataforma para o atendimento das demandas das disciplinas de **Perícia Contábil**, **Auditoria Forense**, **Contabilidade Pública** e **Direito Agrário**.
+- **Caso Central**: *"O Labirinto da Terra Solidária"* - Estudo de caso sobre o conflito de terras em Pai André, Várzea Grande/MT.
+- **Implementação**: Redesenho completo da interface para uma estética "Investigativa/Auditoria", utilizando paleta de cores sóbrias (Deep Navy e Accent Red).
 
-### 2. Estrutura das Disciplinas Integradas
-- **Legislação do Agronegócio**: Foco em Parceria vs. Comodato e Imóvel Rural vs. Expansão Urbana.
-- **Contabilidade Pública**: Auditoria de convênios (R$ 5M), desvio de finalidade (LRF) e registro de Ativo Social (MCASP).
-- **Perícia Contábil**: Investigação de fluxo de caixa, separação de recursos públicos/privados ("Joio do Trigo") e elaboração de laudo pericial.
+### 2. Estrutura de Conteúdo por Grupo
+Cada equipe de acadêmicos possui uma trilha específica de defesa técnica:
+- **Grupo 1**: Enfoque em **Comodato** e **Imóvel Rural** (Bruna, Yorgelis, Simone).
+- **Grupo 2**: Enfoque em **Comodato** e **Expansão Urbana/REURB** (Sarah, Vinícius, Alysson, Edson).
+- **Grupo 3**: Enfoque em **Parceria Rural** e **Imóvel Rural** (Paulo, Leison, Lucas, Leandro).
 
-### 3. Implementação dos Grupos (Novos Acadêmicos)
-- **Grupo 1**: Bruna Saggin, Yorgelis Rojas, Simone Terena. (Foco: Comodato / Imóvel Rural).
-- **Grupo 2**: Sarah Ikegami, Vinicius, Alysson Dias, Edson Junior. (Foco: Comodato / Expansão Urbana).
-- **Grupo 3**: Paulo Henrique, Leison Silva, Lucas Silva, Leandro Arruda. (Foco: Parceria / Imóvel Rural).
+### 3. Requisitos Técnicos de Apresentação (Atendidos)
+- **Extensão**: 12 slides técnicos por grupo, cobrindo Legislação, LRF, MCASP e Laudo Pericial.
+- **Plano de Contas**: Destaque visual centralizado para o Plano de Contas de Regularização, demonstrando a segregação de ativos (Público vs. Privado).
+- **Acessibilidade de Dados**: Sistema de navegação rápido entre grupos e Menu Principal centralizado.
 
-### 4. Destaque Visual: Plano de Contas
-- **Pedido**: Dar destaque especial ao Plano de Contas.
-- **Ação**: Implementação de um visualizador de Plano de Contas de Regularização em cada página de grupo, mostrando a segregação de ativos e o rastreamento de desvios.
-
-### 5. Melhorias de Apresentação e Interatividade (Última Atualização)
-- **Expansão de Conteúdo**: Refatoração das páginas HTML de cada grupo para comportarem **12 slides interativos**, divididos estruturalmente para abordar de forma isolada os requisitos de Legislação, Contabilidade Pública e Perícia.
-- **Design "Split-Screen"**: Implementação de leiaute responsivo que divide a tela, garantindo que o conteúdo textual denso esteja perfeitamente legível em contraste com imagens HD contextuais do agronegócio e do judiciário.
-- **Imagens Contextualizadas em IA (Pollinations)**: Substituição de placeholders quebrados por 27 imagens exclusivas geradas por Inteligência Artificial via prompts otimizados em inglês (com seeds fixos). As imagens são persistidas localmente (`assets/`) para garantir funcionamento offline em defesas de banca e maior velocidade no GitHub Pages.
-- **Integração PPTX (PptxGenJS)**: Adição da funcionalidade de "Exportar PPTX". A plataforma converte programaticamente os elementos em tela (textos, listas, layouts e fundos) diretamente para um arquivo `.pptx` (PowerPoint) editável no lado do cliente. Essa ferramenta atende à exigência da turma, permitindo que os acadêmicos editem seus slides localmente com as imagens processadas.
+### 4. Inovações e Ferramentas de Suporte
+- **Estética Visual (Minimalismo)**: Uso de ilustrações exclusivas no estilo **Single Line Art** (traçado de linha única). Esta escolha pedagógica visa reduzir a carga cognitiva, mantendo o foco do espectador no conteúdo normativo e técnico (Artigos da CF, LRF e NBC).
+- **Portabilidade (Exportar PPTX)**: Implementação de motor de exportação programática. Os alunos podem gerar arquivos PowerPoint (.pptx) editáveis diretamente do navegador, garantindo autonomia para ajustes de última hora em apresentações presenciais.
+- **Persistência Local**: Todas as mídias e ativos são processados e armazenados localmente na estrutura `/assets/`, garantindo que o projeto funcione sem dependência de internet externa durante as bancas de defesa.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-- **Frontend**: HTML5, CSS3 (Modern Grid/Flexbox), JavaScript (Vanilla).
-- **Geração de Apresentações**: `PptxGenJS` (Exportação client-side para PowerPoint).
-- **Geração de Imagens**: API Pollinations IA (com processamento via scripts locais automatizados em Python).
-- **Ícones**: Phosphor Icons.
-- **Tipografia**: Outfit & Playfair Display (Executive/Investigative style).
-- **Infraestrutura**: Git, GitHub (synergia-cont7), GitHub Pages.
+## 🛠️ Stack Tecnológica
+- **Linguagens**: HTML5 Semântico, CSS3 (Modular Layouts), JavaScript ES6+.
+- **Bibliotecas**:
+    - `PptxGenJS`: Conversão de DOM para Office Open XML (PPTX).
+    - `Phosphor Icons`: Sistema de iconografia técnica.
+- **Processamento de Imagem**: Pipeline de geração via Pollinations IA com scripts de otimização em Python.
+- **Hospedagem**: Versionamento via Git e deploy contínuo via GitHub Pages.
 
-## 🔗 Links Úteis
-- **Repositório**: [github.com/renato0503/synergia-cont7](https://github.com/renato0503/synergia-cont7)
-- **Site ao Vivo**: [renato0503.github.io/synergia-cont7](https://renato0503.github.io/synergia-cont7/)
+## 🔗 Repositório e Acesso
+- **GitHub**: [github.com/renato0503/synergia-cont7](https://github.com/renato0503/synergia-cont7)
+- **URL de Produção**: [renato0503.github.io/synergia-cont7](https://renato0503.github.io/synergia-cont7/)
+
+---
+*Atualizado em: 13 de Maio de 2026*
+*Responsável: Prof. Renato Rosa / Antigravity AI*
