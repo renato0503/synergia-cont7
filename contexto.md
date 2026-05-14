@@ -122,6 +122,17 @@ Este documento resume as solicitações do Prof. Renato Rosa e as implementaçõ
 - **Escala gráfica**: Adicionada ao canto inferior esquerdo.
 - **Layer Switcher**: Alternância entre OSM e Satélite.
 
+### 16. Expansão para Outra Turma (Synergia Cont7)
+- **Pedido**: Preparar a plataforma para outros 3 grupos de uma nova turma e mudar o repositório para `synergia-cont7`.
+- **Ações**:
+    - Alteração do repositório remoto para `https://github.com/renato0503/synergia-cont7`.
+    - Expansão da Home (`index.html`) para suportar 6 grupos no total (1, 2, 3, 4, 5 e 6).
+    - Criação de templates completos para os novos grupos:
+        - `grupo1.html` e `mapa_grupo1.html`
+        - `grupo3.html` e `mapa_grupo3.html`
+        - `grupo5.html` e `mapa_grupo5.html`
+    - Padronização de placeholders para que os novos alunos possam inserir seus temas, integrantes e dados específicos.
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -131,5 +142,5 @@ Este documento resume as solicitações do Prof. Renato Rosa e as implementaçõ
 - **Infraestrutura**: Git, GitHub, GitHub Pages.
 
 ## 🔗 Links Úteis
-- **Repositório**: [github.com/renato0503/synergia-gp](https://github.com/renato0503/synergia-gp)
-- **Site ao Vivo**: [renato0503.github.io/synergia-gp](https://renato0503.github.io/synergia-gp/)
+- **Repositório**: [github.com/renato0503/synergia-cont7](https://github.com/renato0503/synergia-cont7)
+- **Site ao Vivo**: [renato0503.github.io/synergia-cont7](https://renato0503.github.io/synergia-cont7/)
