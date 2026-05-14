@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        :root { --primary: #0f172a; --accent: #b91c1c; --accent-light: #fef2f2; --gold: #854d0e; --bg-light: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        :root { --primary: #0f172a; --accent: #b91c1c; --accent-light: #fef2f2; --bg-light: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         html, body { height: 100%; overflow: hidden; background-color: var(--primary); }
         body { scroll-snap-type: y mandatory; overflow-y: scroll; scroll-behavior: smooth; }
@@ -21,31 +21,33 @@
         .slide { height: 100vh; width: 100vw; scroll-snap-align: start; position: relative; overflow: hidden; background: var(--bg-light); display: flex; }
         .slide-content { padding: 4rem 8%; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 10; }
         
+        /* Layouts */
+        .split-layout { display: flex; width: 100%; height: 100%; }
+        .split-text { flex: 1; padding: 5rem 6%; display: flex; flex-direction: column; justify-content: center; background: white; z-index: 2; }
+        .split-image { flex: 1.2; background-size: cover; background-position: center; position: relative; }
+        .split-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%); }
+        .split-image.left::after { background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%); }
+
         .discipline-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-light); color: var(--accent); padding: 0.6rem 1.5rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.7rem; margin-bottom: 1.5rem; align-self: flex-start; border: 1px solid rgba(185, 28, 28, 0.1); }
         h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.5rem); color: var(--primary); margin-bottom: 1rem; line-height: 1.1; font-weight: 900; }
         h3 { color: var(--accent); font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
-        p { font-size: 1.05rem; line-height: 1.6; color: var(--text-muted); max-width: 900px; margin-bottom: 1rem; }
-        ul { list-style: none; margin-bottom: 1rem; }
-        li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; color: var(--text-dark); font-size: 1rem; }
-        li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-
-        /* Plano de Contas Visual - DESTAQUE ESPECIAL */
-        .pc-container { background: #1e293b; color: #f1f5f9; border-radius: 16px; padding: 2rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); border: 1px solid #334155; }
-        .pc-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .pc-row { display: flex; justify-content: space-between; padding: 0.4rem 0; transition: background 0.2s; border-radius: 4px; }
+        p { font-size: 1.1rem; line-height: 1.6; color: var(--text-muted); max-width: 900px; margin-bottom: 1rem; }
+        
+        /* Plano de Contas Visual */
+        .pc-container { background: #1e293b; color: #f1f5f9; border-radius: 16px; padding: 2rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); border: 1px solid #334155; width: 100%; max-width: 1000px; margin: 0 auto; }
+        .pc-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; color: #94a3b8; font-weight: bold;}
+        .pc-row { display: flex; justify-content: space-between; padding: 0.5rem 0; transition: background 0.2s; border-radius: 4px; }
         .pc-row:hover { background: rgba(255,255,255,0.05); }
         .pc-code { color: #38bdf8; font-weight: 600; width: 140px; }
         .pc-desc { flex-grow: 1; }
-        .pc-val { color: #10b981; text-align: right; width: 100px; }
+        .pc-val { color: #10b981; text-align: right; width: 100px; font-weight: bold;}
         .pc-indent-1 { padding-left: 1.5rem; }
         .pc-indent-2 { padding-left: 3rem; color: #94a3b8; }
         .pc-highlight { background: rgba(185, 28, 28, 0.2); border-left: 3px solid var(--accent); }
 
-        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 1rem; }
-        .info-card { background: white; padding: 2rem; border-radius: 20px; border: 1px solid var(--border); transition: var(--transition); }
-        .info-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .info-card { background: #f8fafc; padding: 2rem; border-radius: 20px; border: 1px solid var(--border); margin-top: 1.5rem; border-left: 4px solid var(--accent); }
 
-        .slide-number { position: absolute; bottom: 2rem; right: 3rem; font-family: 'Playfair Display', serif; font-weight: 900; color: rgba(15, 23, 42, 0.04); font-size: 6rem; z-index: 1; pointer-events: none; }
+        .slide-number { position: absolute; bottom: 2rem; right: 3rem; font-family: 'Playfair Display', serif; font-weight: 900; color: rgba(15, 23, 42, 0.05); font-size: 6rem; z-index: 1; pointer-events: none; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-content > * { animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
@@ -54,11 +56,9 @@
         .animate-content > *:nth-child(3) { animation-delay: 0.3s; }
         .animate-content > *:nth-child(4) { animation-delay: 0.4s; }
 
-        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('hero.png') center/cover; color: white; }
-        .cover-slide h2 { color: white; }
-        .team-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; }
-        
-        .source-footer { position: absolute; bottom: 2rem; left: 8%; font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 2rem; }
+        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop') center/cover; color: white; }
+        .cover-slide h2 { color: white; font-size: 4.5rem; }
+        .team-box { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); margin-top: 3rem; display: inline-block; }
     </style>
 </head>
 <body>
@@ -67,156 +67,280 @@
     <!-- SLIDE 1: CAPA -->
     <section class="slide cover-slide">
         <div class="slide-content animate-content" style="align-items: center; text-align: center;">
-            <div class="discipline-tag" style="background: var(--accent); color: white; border: none;">Rastreabilidade Forense e Conformidade MCASP</div>
-            <h2>O Labirinto da Terra Solidária</h2>
-            <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 800px;">Investigação técnica e segregação estrita de recursos para mitigação de riscos na gestão de convênios públicos.</p>
+            <div class="discipline-tag" style="background: var(--accent); color: white; border: none; font-size: 0.9rem;"><i class="ph ph-magnifying-glass"></i> Perícia Contábil & Auditoria Forense</div>
+            <h2>O Labirinto da<br>Terra Solidária</h2>
+            <p style="color: #cbd5e1; font-size: 1.4rem; max-width: 800px; margin-top: 1rem;">Rastreabilidade Forense e Conformidade ao MCASP na Gestão de Convênios Públicos.</p>
             <div class="team-box">
-                <p><strong>Integrantes:</strong> Bruna Saggin, Yorgelis Rojas, Simone Terena</p>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Assistentes Técnicos Nomeados | UNIFACC 2026</p>
+                <p style="color: white; font-size: 1.2rem; margin: 0;"><i class="ph ph-users"></i> <strong>Assistentes Técnicos:</strong> Bruna Saggin, Yorgelis Rojas, Simone Terena</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #94a3b8;">Projeto Synergia Cont7 - UNIFACC 2026</p>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 2: LEGISLAÇÃO -->
+    <!-- SLIDE 2: CONTEXTO -->
     <section class="slide">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Legislação do Agronegócio</div>
-            <h2>Instrumentos de Posse e Tributação</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3><i class="ph ph-article"></i> Enquadramento Jurídico</h3>
-                    <ul>
-                        <li><strong>Comodato (Art. 579 CC):</strong> Empréstimo gratuito de coisa não fungível. Posse precária e detentória.</li>
-                        <li><strong>Imóvel Rural:</strong> Natureza mantida (Art. 191 CF/88). Ocupação não altera zoneamento sem ato oficial.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h3><i class="ph ph-scales"></i> Conflito e Tributação</h3>
-                    <ul>
-                        <li><strong>Ponderação:</strong> Direito à Moradia (Art. 6º) vs. Meio Ambiente (Lei 12.651/12). Exige compensação (PRA).</li>
-                        <li><strong>ITR/Funrural:</strong> Sem exploração econômica direta, não há incidência sobre a cooperativa.</li>
-                    </ul>
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-map-pin"></i> O Caso Problemático</div>
+                <h2>O Conflito em Várzea Grande</h2>
+                <p>No distrito de Pai André, uma fazenda de 500 hectares, objeto de litígio, foi ocupada por 200 famílias. Para mitigar o conflito social, a Prefeitura repassou <strong>R$ 5.000.000,00</strong> via convênio para a associação local.</p>
+                <p>O objetivo era claro: construção de moradias sustentáveis. Contudo, denúncias apontam o uso de verbas e cimento na construção de um barracão comercial, culminando em embargo ambiental e auditoria do Ministério Público.</p>
+                <div class="info-card" style="padding: 1.5rem;">
+                    <h3 style="margin: 0; font-size: 1.1rem;"><i class="ph ph-warning"></i> Nossa Missão Pericial</h3>
+                    <p style="font-size: 0.95rem; margin: 0; margin-top: 0.5rem;">Rastrear o fluxo financeiro, separar o patrimônio público do privado e determinar a responsabilidade tributária e fiscal.</p>
                 </div>
             </div>
-            <p style="margin-top: 1rem; border-left: 4px solid var(--accent); padding-left: 1.5rem; font-style: italic;">"A cooperativa não é proprietária, apenas gestora da posse precária."</p>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1598595562141-8fbe0d6448bd?q=80&w=2070&auto=format&fit=crop');"></div>
         </div>
         <span class="slide-number">02</span>
     </section>
 
-    <!-- SLIDE 3: CONTABILIDADE PÚBLICA -->
-    <section class="slide" style="background: #f8fafc;">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Contabilidade Pública</div>
-            <h2>Análise de Convênio e MCASP</h2>
-            <div class="info-grid" style="grid-template-columns: 1.2fr 0.8fr;">
-                <div class="info-card" style="border-top: 4px solid var(--accent);">
-                    <h3><i class="ph ph-warning-diamond"></i> Desvio de Finalidade (LRF)</h3>
-                    <p>Configurada improbidade administrativa (Lei 8.429/92) pela mistura de caixa e uso de cimento público em obra privada (barracão).</p>
-                    <h4 style="margin: 1rem 0 0.5rem 0; color: var(--primary);">Registro do Ativo Social:</h4>
-                    <p style="font-family: monospace; background: #f1f5f9; padding: 0.5rem; border-radius: 4px;">1.2.3.1.01.00.00 – Imobilizado em Formação</p>
-                </div>
+    <!-- SLIDE 3: LEG AGRO 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66cb85?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-scales"></i> Legislação do Agronegócio</div>
+                <h2>A Natureza Jurídica: Comodato</h2>
+                <p>Para determinar obrigações fiscais, primeiro definimos a posse. A relação estabelecida configura <strong>Comodato</strong> (Art. 579 do Código Civil) - o empréstimo gratuito de coisa não fungível.</p>
+                <p>A posse das famílias é precária e detentória. Isso significa que não gera direito real automático de propriedade para a cooperativa gestora.</p>
                 <div class="info-card">
-                    <h3><i class="ph ph-file-search"></i> Falhas Detectadas</h3>
-                    <ul style="font-size: 0.9rem;">
-                        <li>Falta de Centro de Custo por Programa</li>
-                        <li>Notas fiscais sem código do convênio</li>
-                        <li>Ausência de segregação MCASP 10ª Ed</li>
-                    </ul>
+                    <h3><i class="ph ph-gavel"></i> Implicação Tributária</h3>
+                    <p style="margin:0;">Como a cooperativa não é a proprietária registral (que continua sendo do Incra/herdeiros), e não há exploração econômica direta com fins lucrativos da terra repassada em comodato, <strong>não há incidência de ITR sobre a cooperativa</strong>.</p>
                 </div>
             </div>
         </div>
         <span class="slide-number">03</span>
     </section>
 
-    <!-- SLIDE 4: PERÍCIA CONTÁBIL -->
+    <!-- SLIDE 4: LEG AGRO 2 -->
     <section class="slide">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Perícia Contábil</div>
-            <h2>Rastreamento Forense do "Joio e Trigo"</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3><i class="ph ph-fingerprint"></i> Metodologia</h3>
-                    <p>Cruzamento de NF-e (SEFAZ-MT) com fluxo bancário e aplicação física dos materiais (In situ).</p>
-                </div>
-                <div class="info-card">
-                    <h3><i class="ph ph-question"></i> Quesitos Periciais</h3>
-                    <p style="font-size: 0.9rem;">1. Quantificar cimento público vs. próprio.<br>2. Comprovar origem da verba do barracão.<br>3. Demonstrar proporção de mistura patrimonial.</p>
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-tree"></i> Legislação do Agronegócio</div>
+                <h2>Imóvel Rural e o Embargo</h2>
+                <p>Apesar de estar próximo à zona urbana, o território mantém sua classificação agrária. A ocupação de fato não altera a natureza jurídica do solo sem um decreto de desapropriação ou usucapião coletivo, conforme Art. 191 da CF/88.</p>
+                <p>Isso explica o embargo da SEMA: a construção das casas violou as restrições ambientais da Lei 12.651/12 (Código Florestal), desrespeitando a Reserva Legal da fazenda.</p>
+                <div class="info-card" style="border-color: #f59e0b; border-left-color: #f59e0b; background: #fffbeb;">
+                    <h3 style="color: #d97706;"><i class="ph ph-scales-balance"></i> Choque de Direitos</h3>
+                    <p style="margin:0;">Direito à Moradia (Art. 6º CF/88) vs. Meio Ambiente. A jurisprudência exige ponderação: a moradia não pode suprimir reserva legal sem o devido PRA (Programa de Regularização Ambiental).</p>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; background: var(--primary); color: white; padding: 1.5rem; border-radius: 12px;">
-                <h4 style="color: #38bdf8; margin-bottom: 0.5rem;"><i class="ph ph-notebook"></i> Conclusão do Laudo</h4>
-                <p style="font-size: 0.9rem; color: #94a3b8;">Constatado dolo eventual na mistura patrimonial, inviabilizando a prestação de contas simplificada e exigindo perícia investigativa profunda.</p>
-            </div>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2064&auto=format&fit=crop');"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
 
-    <!-- SLIDE 5: PLANO DE CONTAS (DESTAQUE) -->
-    <section class="slide" style="background: #f1f5f9;">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Plano de Contas Forense</div>
-            <h2>Destaque: Estrutura MCASP + Centros de Custos</h2>
+    <!-- SLIDE 5: LEG AGRO 3 -->
+    <section class="slide">
+        <div class="slide-content animate-content" style="align-items: center; text-align: center;">
+            <div class="discipline-tag"><i class="ph ph-calculator"></i> Legislação do Agronegócio</div>
+            <h2>Obrigações Fiscais: Funrural</h2>
+            <p style="max-width: 800px;">A cooperativa está isenta de obrigações tributárias onerosas enquanto atuar apenas como gestora social no comodato. O <strong>Funrural</strong> só incidiria sobre a comercialização de produção agrícola, e não sobre o uso social da terra.</p>
             
-            <div class="pc-container">
-                <div class="pc-header">
-                    <span>CÓDIGO MCASP / CONTA</span>
-                    <span>VALOR ESTIMADO</span>
+            <div style="display: flex; gap: 2rem; margin-top: 3rem; max-width: 900px; width: 100%;">
+                <div style="flex: 1; background: white; padding: 3rem; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);">
+                    <i class="ph ph-check-circle" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="justify-content: center; color: var(--primary);">Gestão Social</h3>
+                    <p style="font-size: 0.95rem;">Construção de casas via verba pública não caracteriza fato gerador de impostos rurais.</p>
                 </div>
-                <div class="pc-row">
-                    <span class="pc-code">1.2.3.1.01.00.00</span>
-                    <span class="pc-desc">Imobilizado em Formação (Habitação Social)</span>
-                    <span class="pc-val">R$ 4.2M</span>
-                </div>
-                <div class="pc-row pc-highlight">
-                    <span class="pc-code">1.2.3.1.02.00.00</span>
-                    <span class="pc-desc">Infraestrutura Agrícola (Lavoura - DESVIO)</span>
-                    <span class="pc-val">R$ 175k</span>
-                </div>
-                <div class="pc-row">
-                    <span class="pc-code">1.1.1.1.01.00.00</span>
-                    <span class="pc-desc">Disponibilidades Vinculadas (Convênio)</span>
-                    <span class="pc-val">R$ 5M</span>
-                </div>
-                <div class="pc-row">
-                    <span class="pc-code">2.1.1.1.01.00.00</span>
-                    <span class="pc-desc">Obrigações com Fornecedores (Cimento)</span>
-                    <span class="pc-val">--</span>
-                </div>
-                <div class="pc-row pc-indent-1">
-                    <span class="pc-code">3.1.1.1.01.00.00</span>
-                    <span class="pc-desc">Despesas de Capital - Habitação</span>
-                    <span class="pc-val">--</span>
-                </div>
-                <div class="pc-row pc-indent-2">
-                    <span class="pc-code">8.1.1.1.01.00.00</span>
-                    <span class="pc-desc">Bens Recebidos em Comodato (Compensação)</span>
-                    <span class="pc-val">500 ha</span>
+                <div style="flex: 1; background: white; padding: 3rem; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);">
+                    <i class="ph ph-warning-octagon" style="font-size: 3rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                    <h3 style="justify-content: center; color: var(--primary);">Comercialização</h3>
+                    <p style="font-size: 0.95rem;">Se a lavoura gerar venda externa, exigirá retenção tributária sobre o faturamento.</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem; font-weight: 800; color: var(--accent); text-align: center;">REGRA DE OURO: Fonte + Centro de Custo + NF-e com CNPJ do Convênio.</p>
         </div>
         <span class="slide-number">05</span>
     </section>
 
-    <!-- SLIDE 6: FONTES -->
-    <section class="slide" style="background: var(--primary); color: white; text-align: center;">
-        <div class="slide-content animate-content" style="align-items: center;">
-            <i class="ph ph-books" style="font-size: 4rem; color: var(--accent); margin-bottom: 2rem;"></i>
-            <h2>Fundamentação Técnica</h2>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; text-align: left; max-width: 800px;">
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>MCASP 10ª Edição:</strong> Regras de ativos sociais e convênios.</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>TCU 2.145/2022:</strong> Segregação patrimonial obrigatória.</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>CAIXA 2025:</strong> Custo médio de habitação popular.</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>ABCIP:</strong> Parâmetros de consumo de materiais.</p>
+    <!-- SLIDE 6: CONTABILIDADE 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2036&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-bank"></i> Contabilidade Pública</div>
+                <h2>A LRF e o Desvio de Finalidade</h2>
+                <p>O repasse de R$ 5 Milhões exigia rigor na execução. A mistura de caixa pessoal com recurso público fere frontalmente a Lei de Responsabilidade Fiscal (Art. 22, 23 e 70).</p>
+                <p>O uso de cimento, comprado com verba pública (destinada a moradias), para construir um barracão agrícola configura <strong>Desvio de Finalidade</strong>.</p>
+                <div class="info-card" style="border-color: var(--accent);">
+                    <h3 style="color: var(--accent);"><i class="ph ph-detective"></i> Improbidade Administrativa</h3>
+                    <p style="margin:0;">Enquadramento na Lei 8.429/92 (Art. 10) se houver dolo (intenção de desviar), ou grave negligência por omissão de controle interno por parte da liderança.</p>
+                </div>
             </div>
-            <a href="index.html" class="btn-nav" style="margin-top: 4rem; background: var(--accent); color: white; border: none;"><i class="ph ph-arrow-left"></i> Voltar</a>
         </div>
+        <span class="slide-number">06</span>
     </section>
 
-    <div class="source-footer">
-        <span><i class="ph ph-database"></i> Fontes: MCASP 2024, SEFAZ-MT, TCU</span>
-        <span><i class="ph ph-buildings"></i> Synergia Cont7 - UNIFACC</span>
-    </div>
+    <!-- SLIDE 7: CONTABILIDADE 2 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-buildings"></i> Contabilidade Pública</div>
+                <h2>O Registro do Ativo Social (MCASP)</h2>
+                <p>A falha central da Prefeitura e da Cooperativa foi a ausência de <strong>Centros de Custo</strong> e notas fiscais sem o CNPJ/Código do Convênio. Como regularizar esse passivo?</p>
+                <p>Conforme o MCASP 10ª Edição, as moradias em construção com verba pública devem ser estritamente controladas no ativo imobilizado.</p>
+                <div style="background: #1e293b; color: white; padding: 2rem; border-radius: 16px; margin-top: 1.5rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #38bdf8; font-family: monospace; font-size: 1.1rem; font-weight: bold;">1.2.3.1.01.00.00</span>
+                        <p style="margin: 0; font-size: 1.1rem;">Imobilizado em Formação (Durante a obra)</p>
+                    </div>
+                    <div style="border-top: 1px solid #334155; padding-top: 1rem;">
+                        <span style="color: #10b981; font-family: monospace; font-size: 1.1rem; font-weight: bold;">1.2.3.1.02.00.00</span>
+                        <p style="margin: 0; font-size: 1.1rem;">Imóveis de Uso Comum (Após entrega)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');"></div>
+        </div>
+        <span class="slide-number">07</span>
+    </section>
+
+    <!-- SLIDE 8: PERÍCIA 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1507925922893-a981d6078eff?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-magnifying-glass"></i> Perícia Contábil</div>
+                <h2>Metodologia de Investigação</h2>
+                <p>Como peritos assistentes, nossa missão é separar o "joio do trigo". Precisamos provar o que foi comprado com os R$ 5M e o que é dinheiro particular.</p>
+                <ul style="margin-top: 1rem;">
+                    <li><strong>Passo 1:</strong> Rastreamento do fluxo de caixa da conta específica do convênio.</li>
+                    <li><strong>Passo 2:</strong> Cruzamento de NF-e emitidas contra o CNPJ na base da SEFAZ-MT.</li>
+                    <li><strong>Passo 3:</strong> Vistoria <em>in loco</em> para correlação física: O cimento faturado está nas casas ou no barracão?</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--accent); font-weight: bold;">Cálculo de Consumo (ABCIP): 18 sacos/casa 50m².</p>
+            </div>
+        </div>
+        <span class="slide-number">08</span>
+    </section>
+
+    <!-- SLIDE 9: PERÍCIA 2 -->
+    <section class="slide">
+        <div class="slide-content animate-content" style="align-items: center; text-align: center;">
+            <div class="discipline-tag"><i class="ph ph-question"></i> Perícia Contábil</div>
+            <h2>Quesitos Técnicos do Juiz</h2>
+            <p style="max-width: 800px; margin-bottom: 3rem;">A perícia responde a perguntas objetivas do magistrado para elucidar o crime financeiro ou erro contábil.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; max-width: 1100px;">
+                <div class="info-card" style="text-align: left; padding: 2rem;">
+                    <h3 style="font-size: 1.1rem;"><span style="color: var(--primary); font-size: 2rem; display: block; margin-bottom: 0.5rem;">01</span>Quantificação Material</h3>
+                    <p style="font-size: 0.95rem;">"Pode o perito quantificar quantos sacos de cimento foram adquiridos com verba pública vs. recursos próprios?"</p>
+                </div>
+                <div class="info-card" style="text-align: left; padding: 2rem; border-color: var(--accent);">
+                    <h3 style="font-size: 1.1rem; color: var(--accent);"><span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">02</span>Desvio Físico</h3>
+                    <p style="font-size: 0.95rem;">"O barracão foi construído com material destinado especificamente pelo convênio para a habitação social?"</p>
+                </div>
+                <div class="info-card" style="text-align: left; padding: 2rem;">
+                    <h3 style="font-size: 1.1rem;"><span style="color: var(--primary); font-size: 2rem; display: block; margin-bottom: 0.5rem;">03</span>Mistura Patrimonial</h3>
+                    <p style="font-size: 0.95rem;">"Qual a proporção de capital público e privado movimentado na mesma conta bancária da liderança?"</p>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">09</span>
+    </section>
+
+    <!-- SLIDE 10: PERÍCIA 3 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-file-text"></i> Perícia Contábil</div>
+                <h2>Achados do Laudo Simulado</h2>
+                <p>Nossa investigação técnica baseada no Custo Médio da CAIXA (R$ 45k/unidade) revela o impacto do desvio.</p>
+                <div class="info-card" style="background: var(--primary); color: white; border: none;">
+                    <h3 style="color: #38bdf8;"><i class="ph ph-check-square-offset"></i> Conclusão Forense</h3>
+                    <ul style="margin:0;">
+                        <li style="color: #cbd5e1;">Comprovado o desvio de 300 sacos de cimento da obra das casas para o barracão comercial.</li>
+                        <li style="color: #cbd5e1;">Impacto financeiro estimado: R$ 45.000,00 (Prejuízo equivalente a 1 unidade habitacional).</li>
+                        <li style="color: #fca5a5; font-weight: bold;">Parecer: Inviável a aprovação da prestação de contas. Necessidade de instauração de Tomada de Contas Especial (TCE).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=2070&auto=format&fit=crop');"></div>
+        </div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- SLIDE 11: PLANO DE CONTAS -->
+    <section class="slide" style="background: #f8fafc;">
+        <div class="slide-content animate-content" style="padding: 2rem 5%; justify-content: center;">
+            <div class="discipline-tag" style="margin-left: auto; margin-right: auto; margin-bottom: 1rem;"><i class="ph ph-table"></i> Solução Contábil</div>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Plano de Contas Forense (MCASP)</h2>
+            
+            <div class="pc-container">
+                <div class="pc-header">
+                    <span>CÓDIGO CONTÁBIL / CLASSIFICAÇÃO</span>
+                    <span>TIPO / VALOR ESTIMADO</span>
+                </div>
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; padding-top: 1rem;">
+                    <span class="pc-code">1. ATIVO</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">1.1.1.1.01.00.00</span>
+                    <span class="pc-desc">Disponibilidades Vinculadas (Convênio Prefeitura)</span>
+                    <span class="pc-val">R$ 5.000.000</span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">1.2.3.1.01.00.00</span>
+                    <span class="pc-desc">Imobilizado em Formação (Habitações Pai André)</span>
+                    <span class="pc-val">R$ 4.200.000</span>
+                </div>
+                <div class="pc-row pc-highlight pc-indent-1">
+                    <span class="pc-code">1.2.3.1.02.00.00</span>
+                    <span class="pc-desc" style="color: #fca5a5;">Infraestrutura Agrícola (Lavoura - DESVIO APURADO)</span>
+                    <span class="pc-val" style="color: #fca5a5;">R$ 175.000</span>
+                </div>
+                
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; margin-top: 0.5rem; padding-top: 1rem;">
+                    <span class="pc-code">2. PASSIVO</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">2.1.1.1.01.00.00</span>
+                    <span class="pc-desc">Obrigações com Fornecedores (Materiais de Construção)</span>
+                    <span class="pc-val">A Vencer</span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">2.1.1.1.02.00.00</span>
+                    <span class="pc-desc">Recursos de Terceiros (Caixa Familiar/Privado)</span>
+                    <span class="pc-val">Rastreado</span>
+                </div>
+
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; margin-top: 0.5rem; padding-top: 1rem;">
+                    <span class="pc-code">8. CONTROLES</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">8.1.1.1.01.00.00</span>
+                    <span class="pc-desc" style="color: #cbd5e1;">Bens Recebidos em Comodato (Uso Precário - 500ha)</span>
+                    <span class="pc-val" style="color: #cbd5e1;">Garantia</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; font-weight: 800; color: var(--accent); text-align: center;">REGRA DE OURO DA AUDITORIA: Toda movimentação exige Conta Bancária Exclusiva + NF-e com CNPJ do Convênio.</p>
+        </div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- SLIDE 12: AGRADECIMENTO -->
+    <section class="slide" style="background: var(--primary); color: white; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <div class="slide-content animate-content" style="align-items: center;">
+            <i class="ph ph-scales" style="font-size: 5rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+            <h2 style="color: white; font-size: clamp(3rem, 5vw, 5rem); margin-bottom: 0.5rem;">Muito Obrigado!</h2>
+            <h3 style="color: #cbd5e1; font-weight: 400; margin-bottom: 2rem;">Defesa Técnica e Pericial Concluída</h3>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem 4rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 1.3rem; color: var(--accent); font-weight: 700; margin-bottom: 1rem;">Grupo 01</p>
+                <p style="font-size: 1.2rem; color: white;">Bruna Saggin</p>
+                <p style="font-size: 1.2rem; color: white;">Yorgelis Rojas</p>
+                <p style="font-size: 1.2rem; color: white;">Simone Terena</p>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0;">Projeto Synergia Cont7 - UNIFACC 2026</p>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0;">Orientação: Prof. Renato Rosa</p>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn-nav" style="margin-top: 3rem; background: var(--accent); color: white; border: none;"><i class="ph ph-house"></i> Voltar ao Menu Principal</a>
+        </div>
+    </section>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -225,7 +349,7 @@
                     entry.target.style.animationPlayState = 'running';
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('.animate-content > *').forEach(el => {
             el.style.animationPlayState = 'paused';

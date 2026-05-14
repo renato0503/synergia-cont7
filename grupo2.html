@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        :root { --primary: #0f172a; --accent: #15803d; /* Environmental Green */ --accent-light: #f0fdf4; --gold: #854d0e; --bg-light: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        :root { --primary: #0f172a; --accent: #15803d; /* Green */ --accent-light: #f0fdf4; --bg-light: #ffffff; --text-dark: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         html, body { height: 100%; overflow: hidden; background-color: var(--primary); }
         body { scroll-snap-type: y mandatory; overflow-y: scroll; scroll-behavior: smooth; }
@@ -21,40 +21,44 @@
         .slide { height: 100vh; width: 100vw; scroll-snap-align: start; position: relative; overflow: hidden; background: var(--bg-light); display: flex; }
         .slide-content { padding: 4rem 8%; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 10; }
         
+        /* Layouts */
+        .split-layout { display: flex; width: 100%; height: 100%; }
+        .split-text { flex: 1; padding: 5rem 6%; display: flex; flex-direction: column; justify-content: center; background: white; z-index: 2; }
+        .split-image { flex: 1.2; background-size: cover; background-position: center; position: relative; }
+        .split-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%); }
+        .split-image.left::after { background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%); }
+
         .discipline-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-light); color: var(--accent); padding: 0.6rem 1.5rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.7rem; margin-bottom: 1.5rem; align-self: flex-start; border: 1px solid rgba(21, 128, 61, 0.1); }
         h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.5rem); color: var(--primary); margin-bottom: 1rem; line-height: 1.1; font-weight: 900; }
         h3 { color: var(--accent); font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
-        p { font-size: 1.05rem; line-height: 1.6; color: var(--text-muted); max-width: 900px; margin-bottom: 1rem; }
-        ul { list-style: none; margin-bottom: 1rem; }
-        li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; color: var(--text-dark); font-size: 1rem; }
-        li::before { content: '🌿'; position: absolute; left: 0; font-size: 0.8rem; top: 0.2rem; }
-
-        /* Plano de Contas Visual - DESTAQUE ESPECIAL */
-        .pc-container { background: #1e293b; color: #f1f5f9; border-radius: 16px; padding: 2rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); border: 1px solid #334155; }
-        .pc-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .pc-row { display: flex; justify-content: space-between; padding: 0.4rem 0; transition: background 0.2s; border-radius: 4px; }
+        p { font-size: 1.1rem; line-height: 1.6; color: var(--text-muted); max-width: 900px; margin-bottom: 1rem; }
+        
+        /* Plano de Contas Visual */
+        .pc-container { background: #1e293b; color: #f1f5f9; border-radius: 16px; padding: 2rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); border: 1px solid #334155; width: 100%; max-width: 1000px; margin: 0 auto; border-top: 4px solid var(--accent); }
+        .pc-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; color: #94a3b8; font-weight: bold;}
+        .pc-row { display: flex; justify-content: space-between; padding: 0.5rem 0; transition: background 0.2s; border-radius: 4px; }
         .pc-row:hover { background: rgba(255,255,255,0.05); }
         .pc-code { color: #4ade80; font-weight: 600; width: 140px; }
         .pc-desc { flex-grow: 1; }
-        .pc-val { color: #fbbf24; text-align: right; width: 100px; }
+        .pc-val { color: #fbbf24; text-align: right; width: 100px; font-weight: bold;}
         .pc-indent-1 { padding-left: 1.5rem; }
         .pc-indent-2 { padding-left: 3rem; color: #94a3b8; }
         .pc-highlight { background: rgba(21, 128, 61, 0.2); border-left: 3px solid var(--accent); }
 
-        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 1rem; }
-        .info-card { background: white; padding: 2rem; border-radius: 20px; border: 1px solid var(--border); transition: var(--transition); }
-        .info-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .info-card { background: #f8fafc; padding: 2rem; border-radius: 20px; border: 1px solid var(--border); margin-top: 1.5rem; border-left: 4px solid var(--accent); }
 
-        .slide-number { position: absolute; bottom: 2rem; right: 3rem; font-family: 'Playfair Display', serif; font-weight: 900; color: rgba(15, 23, 42, 0.04); font-size: 6rem; z-index: 1; pointer-events: none; }
+        .slide-number { position: absolute; bottom: 2rem; right: 3rem; font-family: 'Playfair Display', serif; font-weight: 900; color: rgba(15, 23, 42, 0.05); font-size: 6rem; z-index: 1; pointer-events: none; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-content > * { animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
+        .animate-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .animate-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .animate-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .animate-content > *:nth-child(4) { animation-delay: 0.4s; }
 
-        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('hero.png') center/cover; color: white; }
-        .cover-slide h2 { color: white; }
-        .team-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; }
-        
-        .source-footer { position: absolute; bottom: 2rem; left: 8%; font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 2rem; }
+        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2070&auto=format&fit=crop') center/cover; color: white; }
+        .cover-slide h2 { color: white; font-size: 4.5rem; }
+        .team-box { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); margin-top: 3rem; display: inline-block; }
     </style>
 </head>
 <body>
@@ -63,155 +67,262 @@
     <!-- SLIDE 1: CAPA -->
     <section class="slide cover-slide">
         <div class="slide-content animate-content" style="align-items: center; text-align: center;">
-            <div class="discipline-tag" style="background: var(--accent); color: white; border: none;">Conciliação Socioambiental e Regularização Fundiária</div>
-            <h2>O Labirinto da Terra Solidária</h2>
-            <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 800px;">Viabilidade jurídica da REURB-R e plano de contas orientado à gestão comunitária transparente e sustentável.</p>
+            <div class="discipline-tag" style="background: var(--accent); color: white; border: none; font-size: 0.9rem;"><i class="ph ph-tree-evergreen"></i> Auditoria e Mediação Socioambiental</div>
+            <h2>O Labirinto da<br>Terra Solidária</h2>
+            <p style="color: #cbd5e1; font-size: 1.4rem; max-width: 800px; margin-top: 1rem;">Viabilidade jurídica da REURB-R e plano de contas orientado à gestão comunitária transparente.</p>
             <div class="team-box">
-                <p><strong>Integrantes:</strong> Sarah Ikegami, Vinícius, Alysson Dias, Edson Junior</p>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Assistentes Técnicos Nomeados | UNIFACC 2026</p>
+                <p style="color: white; font-size: 1.2rem; margin: 0;"><i class="ph ph-users"></i> <strong>Equipe de Mediação:</strong> Sarah Ikegami, Vinícius, Alysson Dias, Edson Junior</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #94a3b8;">Projeto Synergia Cont7 - UNIFACC 2026</p>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 2: LEGISLAÇÃO -->
+    <!-- SLIDE 2: CONTEXTO -->
     <section class="slide">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Legislação do Agronegócio</div>
-            <h2>REURB-R e Zoneamento de Transição</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3><i class="ph ph-tree-evergreen"></i> Função Social da Terra</h3>
-                    <ul>
-                        <li><strong>Art. 186 CF/88:</strong> Comodato deve ser reinterpretado. Concessão de uso especial (MP 2.220/2001).</li>
-                        <li><strong>Zona de Transição:</strong> Área rural adjacente a zona urbana.</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h3><i class="ph ph-shield-check"></i> Regularização (Lei 13.465/17)</h3>
-                    <ul>
-                        <li><strong>REURB-R:</strong> Regularização fundiária de ocupações consolidadas em solo rural.</li>
-                        <li><strong>TAC:</strong> Conversão do passivo ambiental em Programa de Regularização Ambiental (PRA).</li>
-                    </ul>
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-map-pin"></i> O Conflito Socioambiental</div>
+                <h2>A Tensão em Pai André</h2>
+                <p>200 famílias ocuparam uma área rural adjacente ao núcleo urbano de Várzea Grande. O repasse de R$ 5 Milhões via convênio buscou resolver o déficit habitacional, mas gerou um novo passivo.</p>
+                <p>O embargo ambiental paralisou a comunidade. O desafio não é apenas punir o desvio contábil na construção do barracão, mas encontrar uma solução que preserve o <strong>Direito à Moradia</strong> sem destruir a <strong>Reserva Legal</strong>.</p>
+                <div class="info-card" style="padding: 1.5rem; border-color: var(--accent);">
+                    <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent);"><i class="ph ph-handshake"></i> Abordagem Conciliatória</h3>
+                    <p style="font-size: 0.95rem; margin: 0; margin-top: 0.5rem;">Nossa equipe propõe uma auditoria focada em regularização. Converteremos o passivo ambiental em um ativo social sustentável.</p>
                 </div>
             </div>
-            <p style="margin-top: 1rem; color: var(--accent); font-weight: 600;">"O embargo viola a função social se não houver alternativa de reassentamento."</p>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop');"></div>
         </div>
         <span class="slide-number">02</span>
     </section>
 
-    <!-- SLIDE 3: CONTABILIDADE PÚBLICA -->
-    <section class="slide" style="background: #f8fdf9;">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Contabilidade Pública</div>
-            <h2>Gestão Comunitária e Transparência</h2>
-            <div class="info-grid">
-                <div class="info-card" style="border-top: 4px solid var(--accent);">
-                    <h3><i class="ph ph-repeat"></i> Regularização do Convênio</h3>
-                    <p>Proposta de retificação do convênio original para incluir infraestrutura agrícola como meta complementar, mitigando o desvio.</p>
-                </div>
+    <!-- SLIDE 3: LEG AGRO 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-scales"></i> Legislação do Agronegócio</div>
+                <h2>A Função Social da Propriedade</h2>
+                <p>O comodato tradicional, que é um mero empréstimo, deve ser reinterpretado à luz do <strong>Artigo 186 da Constituição Federal de 1988</strong>: a propriedade rural deve cumprir sua Função Social.</p>
+                <p>O embargo puro e simples viola essa função se não houver alternativa de reassentamento digno para as 200 famílias ocupantes.</p>
                 <div class="info-card">
-                    <h3><i class="ph ph-chart-pie"></i> Indicadores TCE-MT</h3>
-                    <ul style="font-size: 0.9rem;">
-                        <li>Execução Física vs. Financeira (≥ 90%)</li>
-                        <li>Transparência Ativa mensal no Portal</li>
-                        <li>% de Contrapartida Social (Mão de obra)</li>
-                    </ul>
+                    <h3><i class="ph ph-file-text"></i> Concessão de Uso</h3>
+                    <p style="margin:0;">Sugerimos juridicamente a conversão do comodato precário em uma <strong>Concessão de Uso Especial para fins de moradia</strong>, amparada pela MP 2.220/2001, garantindo segurança jurídica ao assentamento.</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem; font-family: monospace; background: #e8f5e9; padding: 0.8rem; border-radius: 8px;">1.2.4.1.01.00.00 – Investimentos em Comunidade</p>
         </div>
         <span class="slide-number">03</span>
     </section>
 
-    <!-- SLIDE 4: PERÍCIA CONTÁBIL -->
+    <!-- SLIDE 4: LEG AGRO 2 -->
     <section class="slide">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Perícia Contábil</div>
-            <h2>Mediação Técnica e Conformidade</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3><i class="ph ph-handshake"></i> Método</h3>
-                    <p>Auditoria de conformidade distinguindo desvio doloso de gestão precária por lideranças comunitárias.</p>
-                </div>
-                <div class="info-card">
-                    <h3><i class="ph ph-list-checks"></i> Quesitos de Mediação</h3>
-                    <p style="font-size: 0.9rem;">1. O barracão atende a finalidade coletiva de segurança alimentar?<br>2. Há proporcionalidade entre recurso e benefício?<br>3. Viabilidade de TAC ambiental.</p>
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-buildings"></i> Legislação do Agronegócio</div>
+                <h2>A REURB e a Zona de Transição</h2>
+                <p>O imóvel está em uma área rural, mas a proximidade com o distrito de Pai André cria uma <strong>Zona de Transição Rural-Urbana</strong>. Isso muda a perspectiva legal.</p>
+                <p>A Lei 13.465/17 introduziu a <strong>REURB-R</strong> (Regularização Fundiária Rural), permitindo a regularização de núcleos urbanos informais consolidados mesmo dentro de propriedades rurais.</p>
+                <div class="info-card" style="border-left-color: #f59e0b; background: #fffbeb;">
+                    <h3 style="color: #d97706;"><i class="ph ph-shield-check"></i> Condicionante Ambiental</h3>
+                    <p style="margin:0;">A REURB-R é viável, mas a lei exige a <strong>anuência do órgão ambiental (SEMA)</strong> e estudos de viabilidade técnica para compensar a supressão de vegetação nativa.</p>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; background: var(--accent); color: white; padding: 1.5rem; border-radius: 12px;">
-                <h4 style="color: #fef08a; margin-bottom: 0.5rem;"><i class="ph ph-file-text"></i> Recomendações Periciais</h4>
-                <p style="font-size: 0.9rem;">Conversão do passivo em ativo comunitário, assinatura de TAC e plano de prestação de contas retroativa com monitoramento externo.</p>
-            </div>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop');"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
 
-    <!-- SLIDE 5: PLANO DE CONTAS (DESTAQUE) -->
-    <section class="slide" style="background: #f0fdf4;">
-        <div class="slide-content animate-content">
-            <div class="discipline-tag">Plano de Contas Comunitário</div>
-            <h2>Destaque: Programas Sociais e Compensação</h2>
-            
-            <div class="pc-container" style="border-color: #064e3b;">
-                <div class="pc-header">
-                    <span>CÓDIGO / NATUREZA</span>
-                    <span>STATUS / VALOR</span>
-                </div>
-                <div class="pc-row">
-                    <span class="pc-code">1.2.4.1.01.00.00</span>
-                    <span class="pc-desc">Ativos Sociais em Regularização (Habitação)</span>
-                    <span class="pc-val">PENDENTE</span>
-                </div>
-                <div class="pc-row pc-highlight">
-                    <span class="pc-code">1.2.4.1.02.00.00</span>
-                    <span class="pc-desc">Infraestrutura de Segurança Alimentar</span>
-                    <span class="pc-val">OPERACIONAL</span>
-                </div>
-                <div class="pc-row">
-                    <span class="pc-code">2.1.1.1.02.00.00</span>
-                    <span class="pc-desc">Compromissos Ambientais (Passivo PRA)</span>
-                    <span class="pc-val">R$ 60k</span>
-                </div>
-                <div class="pc-row">
-                    <span class="pc-code">3.2.1.1.01.00.00</span>
-                    <span class="pc-desc">Despesas com Regularização Fundiária</span>
-                    <span class="pc-val">--</span>
-                </div>
-                <div class="pc-row pc-indent-1">
-                    <span class="pc-code">3.2.1.1.03.00.00</span>
-                    <span class="pc-desc">Rateio Administrativo (15% Teto)</span>
-                    <span class="pc-val">--</span>
-                </div>
-                <div class="pc-row pc-indent-2">
-                    <span class="pc-code">8.1.2.1.01.00.00</span>
-                    <span class="pc-desc">Bens Comunitários (Gestão Compartilhada)</span>
-                    <span class="pc-val">--</span>
+    <!-- SLIDE 5: LEG AGRO 3 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1927&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-leaf"></i> Solução Ambiental</div>
+                <h2>O TAC e o PRA</h2>
+                <p>Para destravar o embargo, a comunidade e a prefeitura precisam firmar um <strong>TAC (Termo de Ajustamento de Conduta)</strong> com o Ministério Público Estadual e a SEMA.</p>
+                <p>O passivo ambiental gerado pela construção do barracão será convertido no ingresso obrigatório ao <strong>Programa de Regularização Ambiental (PRA)</strong>.</p>
+                <div class="info-card">
+                    <h3><i class="ph ph-calculator"></i> Custos de Recuperação</h3>
+                    <p style="margin:0;">Segundo dados da SEMA-MT (2024), o custo de recuperação de Reserva Legal é de aprox. R$ 1.200/ha. Para os 10% da área afetada (50ha), o passivo convertível é de cerca de R$ 60.000,00.</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem; font-weight: 800; color: var(--accent); text-align: center;">REGRA DE OURO: Centro de Custo por Projeto (Habitação vs Lavoura).</p>
         </div>
         <span class="slide-number">05</span>
     </section>
 
-    <!-- SLIDE 6: FONTES -->
-    <section class="slide" style="background: var(--primary); color: white; text-align: center;">
-        <div class="slide-content animate-content" style="align-items: center;">
-            <i class="ph ph-leaf" style="font-size: 4rem; color: var(--accent); margin-bottom: 2rem;"></i>
-            <h2>Fundamentação Socioambiental</h2>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; text-align: left; max-width: 800px;">
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>Lei 13.465/17 (REURB):</strong> Marco legal para regularização rural-urbana.</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>IN 04/2023 TCE-MT:</strong> Indicadores de convênios comunitários.</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>SEMA-MT 2024:</strong> Custos de recuperação de reserva legal (PRA).</p>
-                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>IBGE Censo Agro:</strong> Viabilidade de gestão mista social/produção.</p>
+    <!-- SLIDE 6: CONTABILIDADE 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-bank"></i> Contabilidade Pública</div>
+                <h2>Gestão Comunitária Precária</h2>
+                <p>A auditoria identificou que não houve necessariamente dolo (roubo intencional), mas sim uma grave falha na <strong>Segregação de Caixa</strong>. A liderança comunitária tratou o recurso público do convênio e a receita própria como um "caixa único".</p>
+                <p>Isso gerou o apontamento de desvio de finalidade. A LRF não perdoa falhas de segregação.</p>
+                <div class="info-card" style="border-color: var(--accent);">
+                    <h3 style="color: var(--accent);"><i class="ph ph-arrow-counter-clockwise"></i> A Retificação do Convênio</h3>
+                    <p style="margin:0;">Providência Contábil: Submeter um aditivo de retificação do plano de trabalho à Prefeitura, incluindo a infraestrutura do "barracão de segurança alimentar" como meta complementar e legítima.</p>
+                </div>
             </div>
-            <a href="index.html" class="btn-nav" style="margin-top: 4rem; background: var(--accent); color: white; border: none;"><i class="ph ph-arrow-left"></i> Voltar</a>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=2026&auto=format&fit=crop');"></div>
         </div>
+        <span class="slide-number">06</span>
     </section>
 
-    <div class="source-footer">
-        <span><i class="ph ph-tree"></i> Fontes: Lei REURB, TCE-MT, SEMA-MT</span>
-        <span><i class="ph ph-buildings"></i> Synergia Cont7 - UNIFACC</span>
-    </div>
+    <!-- SLIDE 7: CONTABILIDADE 2 -->
+    <section class="slide">
+        <div class="slide-content animate-content" style="align-items: center; text-align: center;">
+            <div class="discipline-tag"><i class="ph ph-chart-pie"></i> Contabilidade Pública</div>
+            <h2>Indicadores de Gestão TCE-MT</h2>
+            <p style="max-width: 800px; margin-bottom: 3rem;">Para aprovar as contas do convênio comunitário com o novo aditivo, a cooperativa deverá enquadrar-se na IN 04/2023 do Tribunal de Contas de Mato Grosso.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; max-width: 1100px;">
+                <div class="info-card" style="text-align: left; padding: 2rem;">
+                    <i class="ph ph-chart-line-up" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.1rem;">Execução vs. Física</h3>
+                    <p style="font-size: 0.95rem;">Exigência de correlação superior a 90% entre o dinheiro gasto e a obra entregue. Cada prego deve ter nota fiscal.</p>
+                </div>
+                <div class="info-card" style="text-align: left; padding: 2rem;">
+                    <i class="ph ph-eye" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.1rem;">Transparência Ativa</h3>
+                    <p style="font-size: 0.95rem;">Obrigação de publicação mensal das despesas e do saldo bancário no Portal da Transparência comunitário.</p>
+                </div>
+                <div class="info-card" style="text-align: left; padding: 2rem;">
+                    <i class="ph ph-users" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.1rem;">Contrapartida Social</h3>
+                    <p style="font-size: 0.95rem;">Registro contábil do trabalho voluntário (mão de obra da comunidade) como contrapartida econômica ao convênio.</p>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">07</span>
+    </section>
+
+    <!-- SLIDE 8: PERÍCIA 1 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-image left" style="background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop');"></div>
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-magnifying-glass"></i> Perícia Contábil</div>
+                <h2>Mediação e Conformidade</h2>
+                <p>Nossa auditoria atuou como uma <strong>Auditoria de Conformidade e Mediação</strong>. O objetivo não foi apenas produzir provas de acusação, mas fornecer embasamento técnico para um acordo.</p>
+                <p>Distinguimos tecnicamente, através da análise de relatórios do IBGE (Censo Agro 2017), que a gestão mista de assentamentos (social + pequena produção) é a regra, e não a exceção, exigindo apenas adequação documental.</p>
+            </div>
+        </div>
+        <span class="slide-number">08</span>
+    </section>
+
+    <!-- SLIDE 9: PERÍCIA 2 -->
+    <section class="slide">
+        <div class="split-layout">
+            <div class="split-text animate-content">
+                <div class="discipline-tag"><i class="ph ph-question"></i> Perícia Contábil</div>
+                <h2>Quesitos de Mediação</h2>
+                <p>Respondemos aos quesitos formulados para subsidiar a mesa de conciliação do MP:</p>
+                <ul style="margin-top: 1rem;">
+                    <li style="margin-bottom: 1.5rem;"><strong>1. O barracão atende a finalidade coletiva?</strong><br><span style="color: var(--accent);">Sim. Identificamos que ele serve como centro de segurança alimentar e estocagem de sementes para toda a comunidade.</span></li>
+                    <li style="margin-bottom: 1.5rem;"><strong>2. Há proporcionalidade entre o recurso desviado e o benefício gerado?</strong><br><span style="color: var(--accent);">Sim. O desvio de R$ 45k para o barracão gerou infraestrutura que beneficia as 200 famílias indiretamente.</span></li>
+                    <li><strong>3. É viável a compensação ambiental?</strong><br><span style="color: var(--accent);">Sim, via assinatura do TAC e provisionamento contábil.</span></li>
+                </ul>
+            </div>
+            <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1596414731383-77405eebc8f7?q=80&w=2070&auto=format&fit=crop');"></div>
+        </div>
+        <span class="slide-number">09</span>
+    </section>
+
+    <!-- SLIDE 10: PERÍCIA 3 -->
+    <section class="slide">
+        <div class="slide-content animate-content" style="align-items: center; text-align: center;">
+            <div class="discipline-tag"><i class="ph ph-file-text"></i> Perícia Contábil</div>
+            <h2>Recomendações Periciais</h2>
+            <p style="max-width: 800px; margin-bottom: 3rem;">O laudo simulado da nossa equipe foca na resolução extrajudicial do conflito.</p>
+            
+            <div style="background: var(--primary); color: white; padding: 3rem; border-radius: 20px; text-align: left; width: 100%; max-width: 900px; border-left: 6px solid var(--accent);">
+                <h3 style="color: #4ade80; margin-bottom: 1.5rem;"><i class="ph ph-check-square-offset"></i> Plano de Ação Imediata:</h3>
+                <ol style="margin-left: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+                    <li><strong>Conversão do Passivo:</strong> O barracão construído de forma irregular deve ser tombado como Ativo Comunitário.</li>
+                    <li><strong>Assinatura do TAC:</strong> Aceite imediato dos termos do MP para suspender a multa ambiental.</li>
+                    <li><strong>Prestação de Contas Retroativa:</strong> Organização de todas as notas fiscais emitidas em uma contabilidade por "Centro de Custo de Projeto".</li>
+                    <li><strong>Monitoramento:</strong> Contratação de contador/auditor independente para assinar os relatórios mensais ao TCE.</li>
+                </ol>
+            </div>
+        </div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- SLIDE 11: PLANO DE CONTAS -->
+    <section class="slide" style="background: #f8fafc;">
+        <div class="slide-content animate-content" style="padding: 2rem 5%; justify-content: center;">
+            <div class="discipline-tag" style="margin-left: auto; margin-right: auto; margin-bottom: 1rem;"><i class="ph ph-table"></i> Solução Contábil</div>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Plano de Contas por Projetos Sociais</h2>
+            
+            <div class="pc-container">
+                <div class="pc-header">
+                    <span>CÓDIGO CONTÁBIL / PROGRAMA</span>
+                    <span>STATUS / AÇÃO EXIGIDA</span>
+                </div>
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; padding-top: 1rem;">
+                    <span class="pc-code">1. ATIVO SOCIAL</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">1.2.4.1.01.00.00</span>
+                    <span class="pc-desc">Habitações Populares (Em Regularização REURB)</span>
+                    <span class="pc-val" style="color: #fbbf24;">AGUARDA SEMA</span>
+                </div>
+                <div class="pc-row pc-highlight pc-indent-1">
+                    <span class="pc-code">1.2.4.1.02.00.00</span>
+                    <span class="pc-desc">Infraestrutura Comunitária (Barracão de Alimentos)</span>
+                    <span class="pc-val" style="color: #4ade80;">RETIFICADO</span>
+                </div>
+                
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; margin-top: 0.5rem; padding-top: 1rem;">
+                    <span class="pc-code">2. PASSIVO E PROVISÕES</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">2.1.1.1.02.00.00</span>
+                    <span class="pc-desc" style="color: #f87171;">Provisão para Passivos Ambientais (PRA/TAC)</span>
+                    <span class="pc-val" style="color: #f87171;">R$ 60.000 (Bloq)</span>
+                </div>
+
+                <div class="pc-row" style="background: rgba(255,255,255,0.05); font-weight: bold; margin-top: 0.5rem; padding-top: 1rem;">
+                    <span class="pc-code">3. DESPESAS E CUSTOS</span><span></span><span></span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">3.2.1.1.01.00.00</span>
+                    <span class="pc-desc">Despesas com Regularização Fundiária (Taxas Cartório)</span>
+                    <span class="pc-val">Provisionado</span>
+                </div>
+                <div class="pc-row pc-indent-1">
+                    <span class="pc-code">3.2.1.1.03.00.00</span>
+                    <span class="pc-desc">Rateio Administrativo da Associação</span>
+                    <span class="pc-val">Teto 15% (LRF)</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; font-weight: 800; color: var(--accent); text-align: center;">REGRA DE OURO DA TRANSPARÊNCIA: Cada projeto (Habitação vs. Lavoura) exige um Centro de Custo auditável.</p>
+        </div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- SLIDE 12: AGRADECIMENTO -->
+    <section class="slide" style="background: var(--primary); color: white; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <div class="slide-content animate-content" style="align-items: center;">
+            <i class="ph ph-handshake" style="font-size: 5rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+            <h2 style="color: white; font-size: clamp(3rem, 5vw, 5rem); margin-bottom: 0.5rem;">Muito Obrigado!</h2>
+            <h3 style="color: #cbd5e1; font-weight: 400; margin-bottom: 2rem;">Acordo de Mediação Técnica Concluído</h3>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem 4rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 1.3rem; color: var(--accent); font-weight: 700; margin-bottom: 1rem;">Grupo 02</p>
+                <p style="font-size: 1.2rem; color: white;">Sarah Ikegami</p>
+                <p style="font-size: 1.2rem; color: white;">Vinícius</p>
+                <p style="font-size: 1.2rem; color: white;">Alysson Dias</p>
+                <p style="font-size: 1.2rem; color: white;">Edson Junior</p>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0;">Projeto Synergia Cont7 - UNIFACC 2026</p>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0;">Orientação: Prof. Renato Rosa</p>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn-nav" style="margin-top: 3rem; background: var(--accent); color: white; border: none;"><i class="ph ph-house"></i> Voltar ao Menu Principal</a>
+        </div>
+    </section>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -220,7 +331,7 @@
                     entry.target.style.animationPlayState = 'running';
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('.animate-content > *').forEach(el => {
             el.style.animationPlayState = 'paused';
