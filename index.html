@@ -3,130 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synergia GP - UNIFACC Cuiabá</title>
+    <title>Synergia Cont7 - Perícia e Gestão Pública</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
     
     <style>
         :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
+            --primary: #0f172a;
+            --accent: #b91c1c; /* Investigative Red */
+            --gold: #854d0e;
             --bg-light: #ffffff;
             --text-muted: #64748b;
             --border: #e2e8f0;
-            --transition: all 0.4s ease;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         body { background-color: var(--bg-light); color: var(--primary); overflow-x: hidden; }
 
-        .bg-dots {
+        .bg-pattern {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-            background-size: 30px 30px; opacity: 0.2;
+            background-size: 40px 40px; opacity: 0.3;
         }
 
-        #home {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center;
+        header {
+            height: 80vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 10%;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('hero.png') center/cover;
         }
-        .home-title { font-family: 'Playfair Display', serif; font-size: 5.5rem; font-weight: 900; color: var(--primary); line-height: 1; }
-        .home-subtitle { font-size: 1.1rem; color: var(--text-muted); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 2rem; }
+        .header-tag { font-size: 0.9rem; color: var(--accent); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 800; }
+        .header-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 900; color: var(--primary); line-height: 1.1; }
+        .header-subtitle { margin-top: 1.5rem; color: var(--text-muted); font-size: 1.4rem; max-width: 800px; font-weight: 400; }
 
-        .group-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; width: 90%; margin-top: 3rem; }
+        .case-section { padding: 6rem 10%; background: #f8fafc; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .case-card { 
+            background: white; padding: 4rem; border-radius: 24px; border: 1px solid var(--border); 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.05); position: relative; overflow: hidden;
+        }
+        .case-card::before { content: 'CONFIDENCIAL'; position: absolute; top: 2rem; right: -3rem; background: var(--accent); color: white; padding: 0.5rem 4rem; transform: rotate(45deg); font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; }
+        .case-card h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); }
+        .case-content { font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
+        .case-text p { margin-bottom: 1.5rem; }
+        .case-stats { display: flex; flex-direction: column; gap: 1.5rem; }
+        .stat-item { background: #f1f5f9; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .stat-item span { display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-bottom: 0.5rem; }
+        .stat-item strong { font-size: 1.4rem; color: var(--primary); }
+
+        .group-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1400px; width: 90%; margin: -5rem auto 6rem auto; position: relative; z-index: 10; }
         .group-card {
-            background: white; padding: 3rem 2rem; border-radius: 20px; border: 1px solid var(--border);
-            cursor: pointer; transition: var(--transition); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-            text-decoration: none; color: inherit;
+            background: white; padding: 3.5rem 2.5rem; border-radius: 24px; border: 1px solid var(--border);
+            cursor: pointer; transition: var(--transition); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;
         }
-        .group-card:hover { transform: translateY(-12px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: var(--accent); }
-        .group-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--primary); }
+        .group-card:hover { transform: translateY(-15px); box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.1); border-color: var(--accent); }
+        .group-card .group-num { font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+        .group-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary); line-height: 1.2; }
+        .group-card .members { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; flex-grow: 1; border-top: 1px solid #f1f5f9; padding-top: 1.5rem; }
+        .group-card .btn-view { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-        footer { padding: 5rem; text-align: center; background: #0f172a; color: white; margin-top: 2rem; }
+        footer { padding: 5rem; text-align: center; background: var(--primary); color: white; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
 
-        @media (max-width: 1100px) { .home-title { font-size: 3.5rem; } .group-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) {
-            .groups-grid { grid-template-columns: 1fr !important; }
-            section { padding: 4rem 5% !important; }
-            .home-title { font-size: 3rem !important; }
-            .home-subtitle { font-size: 0.9rem !important; }
-            .group-grid { grid-template-columns: 1fr !important; }
-        }
+        @media (max-width: 1100px) { .header-title { font-size: 3rem; } .group-grid { grid-template-columns: 1fr; margin-top: 2rem; } .case-content { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="bg-dots"></div>
-    <main id="home">
-        <h3 class="home-subtitle">UNIFACC CUIABÁ - ADMINISTRAÇÃO E GESTÃO PÚBLICA</h3>
-        <h1 class="home-title">SYNERGIA</h1>
-        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 1.3rem; max-width: 700px;">
-            "O Abismo entre o CEP e a Cidadania": Diagnóstico Real da Infraestrutura em Cuiabá
+    <div class="bg-pattern"></div>
+    
+    <header>
+        <h3 class="header-tag">UNIFACC CUIABÁ - CIÊNCIAS CONTÁBEIS</h3>
+        <h1 class="header-title">PROJETO SYNERGIA</h1>
+        <p class="header-subtitle">
+            Integrando Legislação do Agronegócio, Contabilidade Pública e Perícia Contábil no enfrentamento de conflitos fundiários e sociais.
         </p>
+    </header>
+
+    <div class="group-grid">
+        <a href="grupo1.html" class="group-card">
+            <span class="group-num">Assistentes Técnicos 01</span>
+            <h3>Análise de Comodato e Imóvel Rural</h3>
+            <div class="members">
+                <i class="ph ph-users"></i> Bruna Saggin, Yorgelis Rojas, Simone Terena
+            </div>
+            <span class="btn-view">Ver Investigação <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="grupo2.html" class="group-card">
+            <span class="group-num">Assistentes Técnicos 02</span>
+            <h3>Análise de Comodato e Expansão Urbana</h3>
+            <div class="members">
+                <i class="ph ph-users"></i> Sarah Ikegami, Vinícius, Alysson Dias, Edson Junior
+            </div>
+            <span class="btn-view">Ver Investigação <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="grupo3.html" class="group-card">
+            <span class="group-num">Assistentes Técnicos 03</span>
+            <h3>Análise de Parceria e Imóvel Rural</h3>
+            <div class="members">
+                <i class="ph ph-users"></i> Paulo Henrique, Leison Silva, Lucas Silva, Leandro Arruda
+            </div>
+            <span class="btn-view">Ver Investigação <i class="ph ph-arrow-right"></i></span>
+        </a>
+    </div>
+
+    <section class="case-section">
+        <div class="case-card">
+            <h3 class="header-tag" style="text-align: left;">Objeto da Perícia</h3>
+            <h2>O Labirinto da Terra Solidária: Entre o Teto e a Terra</h2>
+            
+            <div class="case-content">
+                <div class="case-text">
+                    <p>No município de Várzea Grande, no distrito de "Pai André", uma antiga fazenda de 500 hectares tornou-se o epicentro de um complexo conflito entre herdeiros, o INCRA e 200 famílias de trabalhadores rurais sem-teto.</p>
+                    <p>Em 2025, a Prefeitura Municipal criou o "Consórcio de Integração Rural-Urbana", repassando <strong>R$ 5.000.000,00</strong> para a liderança das famílias. O objetivo era a construção de moradias sustentáveis e a implementação de uma lavoura comunitária.</p>
+                    <p><strong>O Conflito:</strong> Denúncias apontam desvio de finalidade (uso de cimento público em obras privadas/comerciais), registros contábeis misturados com despesas pessoais e embargos ambientais por violação da reserva legal e do Estatuto da Cidade.</p>
+                </div>
+                <div class="case-stats">
+                    <div class="stat-item">
+                        <span>Recurso Repassado</span>
+                        <strong>R$ 5.000.000,00</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Famílias Afetadas</span>
+                        <strong>200 Famílias</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Status Jurídico</span>
+                        <strong>Embargo Ambiental / Auditoria MP</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <div class="group-grid">
-            <a href="grupo1.html" class="group-card">
-                <h3>Grupo 1</h3>
-                <p>[Inserir Tema do Grupo 1]</p>
-            </a>
-            <a href="grupo2.html" class="group-card">
-                <h3>Grupo 2</h3>
-                <p>Transporte Público e Mobilidade</p>
-            </a>
-            <a href="grupo3.html" class="group-card">
-                <h3>Grupo 3</h3>
-                <p>[Inserir Tema do Grupo 3]</p>
-            </a>
-            <a href="grupo4.html" class="group-card">
-                <h3>Grupo 4</h3>
-                <p>Invisibilidade de Dados Territoriais</p>
-            </a>
-            <a href="grupo5.html" class="group-card">
-                <h3>Grupo 5</h3>
-                <p>[Inserir Tema do Grupo 5]</p>
-            </a>
-            <a href="grupo6.html" class="group-card">
-                <h3>Grupo 6</h3>
-                <p>Saneamento e Justiça Ambiental</p>
-            </a>
-        </div>
-        <p style="margin-top: 5rem; font-weight: 700; color: var(--primary); border-top: 1px solid var(--border); padding-top: 2rem;">
-            Orientação: Prof. Renato Rosa
+        <p style="margin-top: 5rem; text-align: center; font-weight: 700; color: var(--primary); border-top: 1px solid var(--border); padding-top: 2rem;">
+            Orientação: Prof. Renato Rosa | Assistência Pericial Acadêmica
         </p>
-    </main>
-    <section style="padding: 4rem 10%; background: #f8fafc; text-align: center;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem;">Centro Geoespacial (QGIS Web)</h2>
-        <div class="group-grid">
-            <a href="mapa_grupo1.html" class="group-card" style="border-color: #6366f1;">
-                <h3>Mapa G1</h3>
-                <p>Análise Territorial</p>
-            </a>
-            <a href="mapa_grupo2.html" class="group-card" style="border-color: #2563eb;">
-                <h3>Mapa G2</h3>
-                <p>Transporte e Simulação</p>
-            </a>
-            <a href="mapa_grupo3.html" class="group-card" style="border-color: #8b5cf6;">
-                <h3>Mapa G3</h3>
-                <p>Análise Territorial</p>
-            </a>
-            <a href="mapa_grupo4.html" class="group-card" style="border-color: #f59e0b;">
-                <h3>Mapa G4</h3>
-                <p>Gaps e Georreferenciamento</p>
-            </a>
-            <a href="mapa_grupo5.html" class="group-card" style="border-color: #ec4899;">
-                <h3>Mapa G5</h3>
-                <p>Análise Territorial</p>
-            </a>
-            <a href="mapa_grupo6.html" class="group-card" style="border-color: #10b981;">
-                <h3>Mapa G6</h3>
-                <p>Redes e Cobertura</p>
-            </a>
-        </div>
     </section>
 
     <footer>
-        <p>Projeto Synergia - UNIFACC Cuiabá | Gestão de Dados e Políticas Públicas</p>
+        <div class="footer-logo">SYNERGIA</div>
+        <p>Projeto Acadêmico UNIFACC Cuiabá | Gestão de Dados e Perícia Contábil 2026</p>
     </footer>
 </body>
 </html>
