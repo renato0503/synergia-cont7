@@ -25,10 +25,18 @@ Este documento resume as solicitações do Prof. Renato Rosa e as implementaçõ
 - **Pedido**: Dar destaque especial ao Plano de Contas.
 - **Ação**: Implementação de um visualizador de Plano de Contas de Regularização em cada página de grupo, mostrando a segregação de ativos e o rastreamento de desvios.
 
+### 5. Melhorias de Apresentação e Interatividade (Última Atualização)
+- **Expansão de Conteúdo**: Refatoração das páginas HTML de cada grupo para comportarem **12 slides interativos**, divididos estruturalmente para abordar de forma isolada os requisitos de Legislação, Contabilidade Pública e Perícia.
+- **Design "Split-Screen"**: Implementação de leiaute responsivo que divide a tela, garantindo que o conteúdo textual denso esteja perfeitamente legível em contraste com imagens HD contextuais do agronegócio e do judiciário.
+- **Imagens Contextualizadas em IA (Pollinations)**: Substituição de placeholders quebrados por 27 imagens exclusivas geradas por Inteligência Artificial via prompts otimizados em inglês (com seeds fixos). As imagens são persistidas localmente (`assets/`) para garantir funcionamento offline em defesas de banca e maior velocidade no GitHub Pages.
+- **Integração PPTX (PptxGenJS)**: Adição da funcionalidade de "Exportar PPTX". A plataforma converte programaticamente os elementos em tela (textos, listas, layouts e fundos) diretamente para um arquivo `.pptx` (PowerPoint) editável no lado do cliente. Essa ferramenta atende à exigência da turma, permitindo que os acadêmicos editem seus slides localmente com as imagens processadas.
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 - **Frontend**: HTML5, CSS3 (Modern Grid/Flexbox), JavaScript (Vanilla).
+- **Geração de Apresentações**: `PptxGenJS` (Exportação client-side para PowerPoint).
+- **Geração de Imagens**: API Pollinations IA (com processamento via scripts locais automatizados em Python).
 - **Ícones**: Phosphor Icons.
 - **Tipografia**: Outfit & Playfair Display (Executive/Investigative style).
 - **Infraestrutura**: Git, GitHub (synergia-cont7), GitHub Pages.

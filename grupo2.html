@@ -56,13 +56,19 @@
         .animate-content > *:nth-child(3) { animation-delay: 0.3s; }
         .animate-content > *:nth-child(4) { animation-delay: 0.4s; }
 
-        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://image.pollinations.ai/prompt/cinematic%20photo%20of%20environmental%20auditor%20desk%20with%20green%20plants%20and%20legal%20documents?width=1920&height=1080&nologo=true') center/cover; color: white; }
+        .cover-slide { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('assets/grupo2/slide01.jpg') center/cover; color: white; }
         .cover-slide h2 { color: white; font-size: 4.5rem; }
         .team-box { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); margin-top: 3rem; display: inline-block; }
     </style>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@3.12.0/libs/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
 </head>
 <body>
-    <div class="nav-controls"><a href="index.html" class="btn-nav"><i class="ph ph-house"></i> Menu Principal</a></div>
+        <div class="nav-controls">
+        <a href="index.html" class="btn-nav"><i class="ph ph-house"></i> Menu Principal</a>
+        <button onclick="exportPPTX('Grupo_2_Synergia')" class="btn-nav" style="border: none;"><i class="ph ph-presentation-chart"></i> Exportar PPTX</button>
+    </div>
+
 
     <!-- SLIDE 1: CAPA -->
     <section class="slide cover-slide">
@@ -90,7 +96,7 @@
                     <p style="font-size: 0.95rem; margin: 0; margin-top: 0.5rem;">Nossa equipe propõe uma auditoria focada em regularização. Converteremos o passivo ambiental em um ativo social sustentável.</p>
                 </div>
             </div>
-            <div class="split-image" style="background-image: url('https://image.pollinations.ai/prompt/aerial%20view%20of%20rural%20settlement%20next%20to%20urban%20city%20border%20brazil?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image" style="background-image: url('assets/grupo2/slide02.jpg');"></div>
         </div>
         <span class="slide-number">02</span>
     </section>
@@ -98,7 +104,7 @@
     <!-- SLIDE 3: LEG AGRO 1 -->
     <section class="slide">
         <div class="split-layout">
-            <div class="split-image left" style="background-image: url('https://image.pollinations.ai/prompt/farmers%20working%20together%20in%20a%20community%20garden%20sustainable%20agriculture?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image left" style="background-image: url('assets/grupo2/slide03.jpg');"></div>
             <div class="split-text animate-content">
                 <div class="discipline-tag"><i class="ph ph-scales"></i> Legislação do Agronegócio</div>
                 <h2>A Função Social da Propriedade</h2>
@@ -126,7 +132,7 @@
                     <p style="margin:0;">A REURB-R é viável, mas a lei exige a <strong>anuência do órgão ambiental (SEMA)</strong> e estudos de viabilidade técnica para compensar a supressão de vegetação nativa.</p>
                 </div>
             </div>
-            <div class="split-image" style="background-image: url('https://image.pollinations.ai/prompt/dirt%20road%20transitioning%20into%20paved%20city%20street%20rural%20urban%20divide?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image" style="background-image: url('assets/grupo2/slide04.jpg');"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
@@ -134,7 +140,7 @@
     <!-- SLIDE 5: LEG AGRO 3 -->
     <section class="slide">
         <div class="split-layout">
-            <div class="split-image left" style="background-image: url('https://image.pollinations.ai/prompt/two%20people%20shaking%20hands%20over%20a%20legal%20environmental%20agreement%20document?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image left" style="background-image: url('assets/grupo2/slide05.jpg');"></div>
             <div class="split-text animate-content">
                 <div class="discipline-tag"><i class="ph ph-leaf"></i> Solução Ambiental</div>
                 <h2>O TAC e o PRA</h2>
@@ -162,7 +168,7 @@
                     <p style="margin:0;">Providência Contábil: Submeter um aditivo de retificação do plano de trabalho à Prefeitura, incluindo a infraestrutura do "barracão de segurança alimentar" como meta complementar e legítima.</p>
                 </div>
             </div>
-            <div class="split-image" style="background-image: url('https://image.pollinations.ai/prompt/wooden%20community%20donation%20box%20with%20brazilian%20money%20and%20receipts?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image" style="background-image: url('assets/grupo2/slide06.jpg');"></div>
         </div>
         <span class="slide-number">06</span>
     </section>
@@ -198,7 +204,7 @@
     <!-- SLIDE 8: PERÍCIA 1 -->
     <section class="slide">
         <div class="split-layout">
-            <div class="split-image left" style="background-image: url('https://image.pollinations.ai/prompt/people%20sitting%20around%20a%20table%20in%20a%20rural%20community%20meeting%20discussing?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image left" style="background-image: url('assets/grupo2/slide07.jpg');"></div>
             <div class="split-text animate-content">
                 <div class="discipline-tag"><i class="ph ph-magnifying-glass"></i> Perícia Contábil</div>
                 <h2>Mediação e Conformidade</h2>
@@ -222,7 +228,7 @@
                     <li><strong>3. É viável a compensação ambiental?</strong><br><span style="color: var(--accent);">Sim, via assinatura do TAC e provisionamento contábil.</span></li>
                 </ul>
             </div>
-            <div class="split-image" style="background-image: url('https://image.pollinations.ai/prompt/large%20community%20warehouse%20filled%20with%20harvested%20vegetables%20and%20food?width=1920&height=1080&nologo=true');"></div>
+            <div class="split-image" style="background-image: url('assets/grupo2/slide08.jpg');"></div>
         </div>
         <span class="slide-number">09</span>
     </section>
@@ -338,5 +344,85 @@
             observer.observe(el);
         });
     </script>
+
+    <script>
+        async function exportPPTX(groupName) {
+            alert("Gerando arquivo PowerPoint... Isso pode levar alguns segundos.");
+            let pres = new PptxGenJS();
+            pres.layout = 'LAYOUT_16x9';
+            
+            let slides = document.querySelectorAll('.slide');
+            for(let i = 0; i < slides.length; i++) {
+                let slideElem = slides[i];
+                let slide = pres.addSlide();
+                
+                let isCover = slideElem.classList.contains('cover-slide');
+                slide.background = { fill: 'FFFFFF' }; 
+                
+                let splitImage = slideElem.querySelector('.split-image');
+                let bgUrl = null;
+                
+                if(splitImage) {
+                    let bgImg = window.getComputedStyle(splitImage).backgroundImage;
+                    let urlMatch = bgImg.match(/url\(['"]?(.*?)['"]?\)/);
+                    if(urlMatch && urlMatch[1]) bgUrl = urlMatch[1];
+                } else if(isCover) {
+                    let bgImg = window.getComputedStyle(slideElem).backgroundImage;
+                    let urlMatch = bgImg.match(/url\(['"]?(.*?)['"]?\)/);
+                    if(urlMatch && urlMatch[1]) bgUrl = urlMatch[1];
+                }
+                
+                if (isCover) {
+                    slide.background = { fill: '0F172A' };
+                    if(bgUrl) {
+                        try {
+                            slide.addImage({ path: bgUrl, x:0, y:0, w:'100%', h:'100%', sizing: {type: 'cover'} });
+                            slide.addShape(pres.ShapeType.rect, { x:0, y:0, w:'100%', h:'100%', fill:{color:'0F172A', transparency:30} });
+                        } catch(e) {}
+                    }
+                    
+                    let h2 = slideElem.querySelector('h2');
+                    let ps = slideElem.querySelectorAll('p');
+                    
+                    if (h2) slide.addText(h2.innerText, { x:1, y:2, w:'80%', h:1.5, fontSize:44, color:'FFFFFF', bold:true, align:'center' });
+                    
+                    let yPos = 3.5;
+                    ps.forEach(p => {
+                        if(p.innerText.trim() !== '') {
+                            slide.addText(p.innerText, { x:1, y:yPos, w:'80%', h:1, fontSize:20, color:'CBD5E1', align:'center' });
+                            yPos += 1;
+                        }
+                    });
+                } else {
+                    let isLeftImage = splitImage && splitImage.classList.contains('left');
+                    
+                    if(bgUrl) {
+                        let imgX = isLeftImage ? 0 : 5;
+                        try {
+                            slide.addImage({ path: bgUrl, x:imgX, y:0, w:5, h:5.625, sizing: {type: 'cover'} });
+                        } catch(e) {}
+                    }
+                    
+                    let textX = (bgUrl && isLeftImage) ? 5.5 : 0.5;
+                    let textW = bgUrl ? 4 : 9;
+                    
+                    let h2 = slideElem.querySelector('h2');
+                    if (h2) slide.addText(h2.innerText, { x:textX, y:0.5, w:textW, h:1, fontSize:32, color:'0F172A', bold:true });
+                    
+                    let yPos = 1.6;
+                    let ps = slideElem.querySelectorAll('p, li');
+                    ps.forEach(p => {
+                        if(p.innerText.trim() !== '') {
+                            let isLi = p.tagName.toLowerCase() === 'li';
+                            slide.addText(p.innerText, { x:textX + (isLi?0.2:0), y:yPos, w:textW - (isLi?0.2:0), h:0.5, fontSize:16, color:'64748B', bullet: isLi });
+                            yPos += 0.6;
+                        }
+                    });
+                }
+            }
+            pres.writeFile({ fileName: groupName + ".pptx" });
+        }
+    </script>
 </body>
+
 </html>
