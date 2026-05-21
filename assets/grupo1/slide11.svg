@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Account tree -->
+  <g transform="translate(640, 70)">
+    <text x="0" y="0" font-family="Arial" font-size="30" fill="#1a365d" text-anchor="middle" font-weight="bold">PLANO DE CONTAS FORENSE (MCASP)</text>
+    <text x="0" y="35" font-family="Arial" font-size="16" fill="#64748b" text-anchor="middle">Estrutura de Regularização Patrimonial</text>
+    
+    <!-- ATIVO branch -->
+    <g transform="translate(-420, 95)">
+      <rect x="-85" y="-28" width="170" height="55" fill="#1a365d" rx="5"/>
+      <text x="0" y="7" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">1. ATIVO</text>
+      
+      <line x1="0" y1="27" x2="-220" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="0" y1="27" x2="0" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="0" y1="27" x2="220" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      
+      <g transform="translate(-220, 120)">
+        <rect x="-75" y="-22" width="150" height="45" fill="#10b981" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#ffffff" text-anchor="middle">1.1.1.1.01.00.00</text>
+      </g>
+      <g transform="translate(0, 120)">
+        <rect x="-95" y="-22" width="190" height="45" fill="#4ade80" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#1a365d" text-anchor="middle">1.2.3.1.01.00.00</text>
+      </g>
+      <g transform="translate(220, 120)">
+        <rect x="-95" y="-22" width="190" height="45" fill="#b91c1c" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#ffffff" text-anchor="middle">1.2.3.1.02.00.00</text>
+      </g>
+      
+      <text x="-220" y="180" font-family="Arial" font-size="11" fill="#4a5568" text-anchor="middle">Disponibilidades</text>
+      <text x="-220" y="195" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Vinculadas</text>
+      <text x="0" y="180" font-family="Arial" font-size="11" fill="#4a5568" text-anchor="middle">Imobilizado</text>
+      <text x="0" y="195" font-family="Arial" font-size="10" fill="#4ade80" text-anchor="middle">em Formação</text>
+      <text x="220" y="180" font-family="Arial" font-size="11" fill="#fca5a5" text-anchor="middle">Infraestrutura</text>
+      <text x="220" y="195" font-family="Arial" font-size="10" fill="#fca5a5" text-anchor="middle">DESVIO APURADO</text>
+    </g>
+    
+    <!-- PASSIVO branch -->
+    <g transform="translate(-420, 295)">
+      <rect x="-85" y="-28" width="170" height="55" fill="#1a365d" rx="5"/>
+      <text x="0" y="7" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">2. PASSIVO</text>
+      
+      <line x1="0" y1="27" x2="-110" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="0" y1="27" x2="110" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      
+      <g transform="translate(-110, 120)">
+        <rect x="-85" y="-22" width="170" height="45" fill="#3b82f6" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#ffffff" text-anchor="middle">2.1.1.1.01.00.00</text>
+      </g>
+      <g transform="translate(110, 120)">
+        <rect x="-85" y="-22" width="170" height="45" fill="#94a3b8" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#ffffff" text-anchor="middle">2.1.1.1.02.00.00</text>
+      </g>
+      
+      <text x="-110" y="175" font-family="Arial" font-size="11" fill="#4a5568" text-anchor="middle">Obrigações</text>
+      <text x="-110" y="190" font-family="Arial" font-size="10" fill="#60a5fa" text-anchor="middle">Fornecedores</text>
+      <text x="110" y="175" font-family="Arial" font-size="11" fill="#4a5568" text-anchor="middle">Recursos</text>
+      <text x="110" y="190" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Terceiros</text>
+    </g>
+    
+    <!-- CONTROLES branch -->
+    <g transform="translate(-420, 485)">
+      <rect x="-85" y="-28" width="170" height="55" fill="#1a365d" rx="5"/>
+      <text x="0" y="7" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">8. CONTROLES</text>
+      
+      <line x1="0" y1="27" x2="0" y2="90" stroke="#94a3b8" stroke-width="2"/>
+      
+      <g transform="translate(0, 120)">
+        <rect x="-105" y="-22" width="210" height="45" fill="#8b5cf6" rx="3"/>
+        <text x="0" y="6" font-family="monospace" font-size="11" fill="#ffffff" text-anchor="middle">8.1.1.1.01.00.00</text>
+      </g>
+      
+      <text x="0" y="175" font-family="Arial" font-size="11" fill="#4a5568" text-anchor="middle">Bens Recebidos</text>
+      <text x="0" y="190" font-family="Arial" font-size="10" fill="#a78bfa" text-anchor="middle">em Comodato - 500ha</text>
+    </g>
+    
+    <!-- Values -->
+    <g transform="translate(330, 150)">
+      <rect x="0" y="0" width="210" height="42" fill="#ffffff" stroke="#10b981"/>
+      <text x="105" y="28" font-family="Arial" font-size="15" fill="#10b981" text-anchor="middle" font-weight="bold">R$ 5.000.000,00</text>
+    </g>
+    <g transform="translate(330, 230)">
+      <rect x="0" y="0" width="210" height="42" fill="#ffffff" stroke="#4ade80"/>
+      <text x="105" y="28" font-family="Arial" font-size="15" fill="#4ade80" text-anchor="middle" font-weight="bold">R$ 4.200.000,00</text>
+    </g>
+    <g transform="translate(330, 310)">
+      <rect x="0" y="0" width="210" height="42" fill="#ffffff" stroke="#b91c1c"/>
+      <text x="105" y="28" font-family="Arial" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="bold">R$ 175.000,00</text>
+    </g>
+  </g>
+  
+  <!-- Golden rule -->
+  <g transform="translate(80, 620)">
+    <rect x="0" y="0" width="1120" height="85" fill="#1a365d" rx="10"/>
+    <text x="560" y="38" font-family="Arial" font-size="22" fill="#ffd700" text-anchor="middle" font-weight="bold">REGRA DE OURO DA AUDITORIA</text>
+    <text x="560" y="65" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Conta Bancária Exclusiva + NF-e com CNPJ do Convênio = Conformidade</text>
+  </g>
+</svg>

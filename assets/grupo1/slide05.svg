@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Rural landscape -->
+  <rect x="0" y="450" width="1280" height="270" fill="#90ee90"/>
+  <ellipse cx="300" cy="500" rx="250" ry="120" fill="#228b22" opacity="0.4"/>
+  <ellipse cx="900" cy="520" rx="350" ry="130" fill="#228b22" opacity="0.3"/>
+  
+  <!-- House with protection -->
+  <g transform="translate(350, 300)">
+    <rect x="0" y="80" width="220" height="160" fill="#d4a574"/>
+    <polygon points="0,80 110,20 220,80" fill="#8b4513"/>
+    <rect x="90" y="150" width="45" height="90" fill="#5c3d2e"/>
+    <rect x="35" y="110" width="55" height="55" fill="#87ceeb" opacity="0.7"/>
+    <rect x="130" y="110" width="55" height="55" fill="#87ceeb" opacity="0.7"/>
+  </g>
+  
+  <!-- Native trees -->
+  <g fill="#006400">
+    <polygon points="270,450 310,220 350,450"/>
+    <polygon points="340,450 385,250 430,450"/>
+    <polygon points="600,450 640,230 680,450"/>
+    <polygon points="670,450 705,270 740,450"/>
+  </g>
+  <g fill="#228b22">
+    <polygon points="300,450 335,300 370,450"/>
+    <polygon points="620,450 655,320 690,450"/>
+  </g>
+  
+  <!-- Funrural tax form -->
+  <g transform="translate(780, 120)">
+    <rect x="0" y="0" width="380" height="280" fill="#ffffff" stroke="#1a365d" stroke-width="2"/>
+    <rect x="0" y="0" width="380" height="45" fill="#b91c1c"/>
+    <text x="190" y="32" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">FUNRURAL</text>
+    <text x="25" y="75" font-family="Arial" font-size="15" fill="#1a365d" font-weight="bold">Receita Federal do Brasil</text>
+    <text x="25" y="105" font-family="Arial" font-size="12" fill="#4a5568">Alíquota: 2,5% sobre receita bruta</text>
+    <text x="25" y="135" font-family="Arial" font-size="12" fill="#4a5568">Fato Gerador: Comercialização Agrícola</text>
+    <rect x="25" y="160" width="330" height="90" fill="#f8fafc"/>
+    <text x="45" y="190" font-family="Arial" font-size="13" fill="#1a365d">Receita Bruta:</text>
+    <text x="280" y="190" font-family="Arial" font-size="13" fill="#1a365d">R$ 120.000,00</text>
+    <text x="45" y="225" font-family="Arial" font-size="14" fill="#b91c1c" font-weight="bold">Tributo devido:</text>
+    <text x="280" y="225" font-family="Arial" font-size="16" fill="#b91c1c" font-weight="bold">R$ 3.000,00</text>
+  </g>
+  
+  <!-- Calculator -->
+  <g transform="translate(1180, 400)">
+    <rect x="0" y="0" width="90" height="140" fill="#333333" rx="8"/>
+    <rect x="12" y="18" width="66" height="35" fill="#90ee90"/>
+    <text x="45" y="45" font-family="monospace" font-size="18" fill="#1a365d" text-anchor="middle">R$</text>
+    <g fill="#666666">
+      <rect x="12" y="62" width="18" height="14"/>
+      <rect x="36" y="62" width="18" height="14"/>
+      <rect x="60" y="62" width="18" height="14"/>
+      <rect x="12" y="82" width="18" height="14"/>
+      <rect x="36" y="82" width="18" height="14"/>
+      <rect x="60" y="82" width="18" height="14"/>
+      <rect x="12" y="102" width="18" height="14"/>
+      <rect x="36" y="102" width="18" height="14"/>
+      <rect x="60" y="102" width="18" height="14"/>
+    </g>
+  </g>
+  
+  <!-- Coffee sacks -->
+  <g transform="translate(680, 480)">
+    <rect x="0" y="35" width="70" height="55" fill="#8b4513" rx="5"/>
+    <text x="35" y="70" font-family="Arial" font-size="14" fill="#ffffff" text-anchor="middle">CAFÉ</text>
+    <rect x="80" y="40" width="70" height="55" fill="#8b4513" rx="5"/>
+    <text x="115" y="75" font-family="Arial" font-size="14" fill="#ffffff" text-anchor="middle">SOJA</text>
+  </g>
+  
+  <!-- Warehouse -->
+  <g transform="translate(130, 420)">
+    <rect x="0" y="0" width="180" height="120" fill="#a0a0a0"/>
+    <polygon points="0,0 90,-50 180,0" fill="#696969"/>
+    <rect x="60" y="50" width="60" height="70" fill="#5c3d2e"/>
+  </g>
+  
+  <!-- Comparison cards -->
+  <g transform="translate(180, 130)">
+    <rect x="0" y="0" width="220" height="130" fill="#ffffff" stroke="#10b981" stroke-width="3" rx="12"/>
+    <circle cx="110" cy="40" r="28" fill="#10b981"/>
+    <path d="M100,40 L108,48 L122,34" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <text x="110" y="90" font-family="Arial" font-size="16" fill="#1a365d" text-anchor="middle" font-weight="bold">GESTÃO SOCIAL</text>
+    <text x="110" y="115" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Isenta de Funrural</text>
+  </g>
+  
+  <g transform="translate(450, 130)">
+    <rect x="0" y="0" width="220" height="130" fill="#ffffff" stroke="#f59e0b" stroke-width="3" rx="12"/>
+    <circle cx="110" cy="40" r="28" fill="#f59e0b"/>
+    <text x="110" y="48" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle">!</text>
+    <text x="110" y="90" font-family="Arial" font-size="16" fill="#1a365d" text-anchor="middle" font-weight="bold">COMERCIALIZAÇÃO</text>
+    <text x="110" y="115" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Retenção Obrigatória</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="55" font-family="Arial" font-size="36" font-weight="bold" fill="#1a365d" text-anchor="middle">OBRIGAÇÕES FISCAIS: FUNRURAL</text>
+  <text x="640" y="100" font-family="Arial" font-size="20" fill="#4a5568" text-anchor="middle">Gestão Social Isenta | Comercialização Gera Tributação</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="spotlight3" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1280" height="720" fill="#0f172a"/>
+  <rect width="1280" height="720" fill="url(#spotlight3)"/>
+  
+  <!-- Plant icon -->
+  <g transform="translate(640, 120)">
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#b45309" stroke-width="4"/>
+    <path d="M0,32 L0,-22" fill="none" stroke="#b45309" stroke-width="7"/>
+    <ellipse cx="-28" cy="-12" rx="22" ry="17" fill="#228b22"/>
+    <ellipse cx="28" cy="-5" rx="20" ry="14" fill="#228b22"/>
+    <ellipse cx="0" cy="-38" rx="18" ry="12" fill="#4ade80"/>
+  </g>
+  
+  <!-- Thank you -->
+  <text x="640" y="290" font-family="Georgia, serif" font-size="68" fill="#ffffff" text-anchor="middle" font-weight="bold">MUITO OBRIGADO!</text>
+  <text x="640" y="345" font-family="Arial" font-size="26" fill="#94a3b8" text-anchor="middle">Reestruturação Fiscal e Tributária Concluída</text>
+  
+  <!-- Team box -->
+  <g transform="translate(640, 430)">
+    <rect x="-220" y="0" width="440" height="260" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" rx="20"/>
+    
+    <circle cx="0" cy="-85" r="45" fill="#b45309"/>
+    <text x="0" y="-73" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">G3</text>
+    <text x="0" y="-53" font-family="Arial" font-size="11" fill="#ffffff" text-anchor="middle">GRUPO 03</text>
+    
+    <text x="0" y="5" font-family="Arial" font-size="22" fill="#ffffff" text-anchor="middle">Paulo Henrique</text>
+    <text x="0" y="45" font-family="Arial" font-size="22" fill="#ffffff" text-anchor="middle">Leison Silva</text>
+    <text x="0" y="85" font-family="Arial" font-size="22" fill="#ffffff" text-anchor="middle">Lucas Silva</text>
+    <text x="0" y="125" font-family="Arial" font-size="22" fill="#ffffff" text-anchor="middle">Leandro Arruda</text>
+    
+    <line x1="-170" y1="155" x2="170" y2="155" stroke="rgba(255,255,255,0.2)"/>
+    
+    <text x="0" y="185" font-family="Arial" font-size="14" fill="#94a3b8" text-anchor="middle">Projeto Synergia Cont7 - UNIFACC 2026</text>
+    <text x="0" y="212" font-family="Arial" font-size="14" fill="#94a3b8" text-anchor="middle">Orientação: Prof. Renato Rosa</text>
+  </g>
+  
+  <!-- Decorations -->
+  <g fill="#b45309" opacity="0.3">
+    <ellipse cx="200" cy="610" rx="110" ry="55"/>
+    <ellipse cx="1080" cy="610" rx="110" ry="55"/>
+  </g>
+  
+  <rect x="0" y="700" width="1280" height="20" fill="#b45309"/>
+</svg>

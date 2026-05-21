@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f0fdf4"/>
+  
+  <!-- Ground -->
+  <ellipse cx="640" cy="620" rx="600" ry="100" fill="#d4a574" opacity="0.4"/>
+  
+  <!-- Community gathering -->
+  <g transform="translate(640, 320)">
+    <g fill="#8b7355">
+      <ellipse cx="-160" cy="60" rx="45" ry="70"/>
+      <ellipse cx="-90" cy="50" rx="40" ry="65"/>
+      <ellipse cx="0" cy="55" rx="42" ry="68"/>
+      <ellipse cx="90" cy="50" rx="40" ry="65"/>
+      <ellipse cx="160" cy="60" rx="45" ry="70"/>
+    </g>
+    <g fill="#f5deb3">
+      <circle cx="-160" cy="-10" r="28"/>
+      <circle cx="-90" cy="-20" r="25"/>
+      <circle cx="0" cy="-15" r="28"/>
+      <circle cx="90" cy="-20" r="25"/>
+      <circle cx="160" cy="-10" r="28"/>
+    </g>
+  </g>
+  
+  <!-- Leader speaking -->
+  <g transform="translate(640, 220)">
+    <rect x="-45" y="45" width="90" height="115" fill="#1a365d"/>
+    <circle cx="0" cy="0" r="38" fill="#f5deb3"/>
+    <path d="M35,25 L70,-35" fill="none" stroke="#f5deb3" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Embargo barrier -->
+  <g transform="translate(920, 280)">
+    <rect x="0" y="0" width="18" height="170" fill="#b91c1c"/>
+    <rect x="55" y="0" width="18" height="170" fill="#b91c1c"/>
+    <rect x="-12" y="55" width="90" height="45" fill="#b91c1c" rx="5"/>
+    <text x="40" y="85" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold">EMBARGO</text>
+  </g>
+  
+  <!-- Government officials -->
+  <g transform="translate(180, 460)">
+    <circle cx="0" cy="-30" r="28" fill="#f5deb3"/>
+    <rect x="-23" y="0" width="46" height="68" fill="#2d3748"/>
+  </g>
+  <g transform="translate(265, 470)">
+    <circle cx="0" cy="-25" r="24" fill="#f5deb3"/>
+    <rect x="-20" y="0" width="40" height="60" fill="#1a365d"/>
+  </g>
+  
+  <!-- Simple houses -->
+  <g transform="translate(90, 510)">
+    <rect x="0" y="0" width="55" height="45" fill="#d4a574"/>
+    <polygon points="0,0 27,-22 55,0" fill="#8b4513"/>
+  </g>
+  <g transform="translate(165, 520)">
+    <rect x="0" y="0" width="55" height="45" fill="#c4956a"/>
+    <polygon points="0,0 27,-20 55,0" fill="#8b4513"/>
+  </g>
+  <g transform="translate(240, 505)">
+    <rect x="0" y="0" width="55" height="45" fill="#d4a574"/>
+    <polygon points="0,0 27,-24 55,0" fill="#8b4513"/>
+  </g>
+  
+  <!-- Info card -->
+  <g transform="translate(860, 490)">
+    <rect x="0" y="0" width="360" height="130" fill="#ffffff" stroke="#15803d" stroke-width="3" rx="12"/>
+    <text x="180" y="35" font-family="Arial" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">ABORDAGEM CONCILIATÓRIA</text>
+    <line x1="30" y1="55" x2="330" y2="55" stroke="#c0c0c0"/>
+    <text x="30" y="82" font-family="Arial" font-size="12" fill="#4a5568">Regularização + Preservação</text>
+    <text x="30" y="110" font-family="Arial" font-size="12" fill="#15803d">Convertendo passivo ambiental</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="55" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">A TENSÃO EM PAI ANDRÉ</text>
+  <text x="640" y="105" font-family="Arial" font-size="20" fill="#15803d" text-anchor="middle">200 Famílias | R$ 5 Milhões | Conflito Ambiental</text>
+</svg>

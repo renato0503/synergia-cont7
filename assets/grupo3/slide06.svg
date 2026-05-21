@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Hybrid entity concept -->
+  <g transform="translate(640, 240)">
+    <rect x="-370" y="-160" width="740" height="320" fill="#ffffff" stroke="#b91c1c" stroke-width="4" rx="20"/>
+    <text x="0" y="-110" font-family="Arial" font-size="26" fill="#b91c1c" text-anchor="middle" font-weight="bold">ENTIDADE HÍBRIDA</text>
+    <text x="0" y="-70" font-family="Arial" font-size="17" fill="#4a5568" text-anchor="middle">O Problema da Contabilidade Mista</text>
+    
+    <g transform="translate(-260, 0)">
+      <rect x="0" y="0" width="190" height="110" fill="#3b82f6" rx="10"/>
+      <text x="95" y="32" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">SETOR SOCIAL</text>
+      <text x="95" y="58" font-family="Arial" font-size="11" fill="#dbeafe" text-anchor="middle">Convênio R$ 5M</text>
+      <text x="95" y="82" font-family="Arial" font-size="11" fill="#dbeafe" text-anchor="middle">Moradias</text>
+    </g>
+    
+    <g transform="translate(70, 0)">
+      <rect x="0" y="0" width="190" height="110" fill="#b45309" rx="10"/>
+      <text x="95" y="32" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">SETOR PRODUTIVO</text>
+      <text x="95" y="58" font-family="Arial" font-size="11" fill="#fef3c7" text-anchor="middle">Vendas R$ 120k</text>
+      <text x="95" y="82" font-family="Arial" font-size="11" fill="#fef3c7" text-anchor="middle">Alface/Hortaliças</text>
+    </g>
+    
+    <line x1="-170" y1="55" x2="0" y2="55" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10,5"/>
+    <line x1="0" y1="55" x2="170" y2="55" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10,5"/>
+    
+    <g transform="translate(0, 140)">
+      <circle cx="0" cy="-32" r="38" fill="#f5deb3"/>
+      <text x="0" y="-25" font-family="Arial" font-size="26" fill="#b91c1c" text-anchor="middle">?</text>
+      <text x="0" y="5" font-family="Arial" font-size="18" fill="#b91c1c" text-anchor="middle">?</text>
+      <rect x="-33" y="12" width="66" height="55" fill="#1a365d"/>
+    </g>
+  </g>
+  
+  <!-- LRF book -->
+  <g transform="translate(100, 190)">
+    <rect x="0" y="0" width="130" height="88" fill="#b91c1c"/>
+    <rect x="8" y="8" width="114" height="72" fill="#991b1b"/>
+    <text x="65" y="45" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">LRF</text>
+    <text x="65" y="68" font-family="Arial" font-size="11" fill="#fca5a5" text-anchor="middle">Segregação Obrigatória</text>
+  </g>
+  
+  <!-- Confusion matrix -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="370" height="130" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+    <text x="185" y="28" font-family="Arial" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="bold">O PECADO ORIGINAL</text>
+    <line x1="22" y1="48" x2="348" y2="48" stroke="#c0c0c0"/>
+    <text x="22" y="75" font-family="Arial" font-size="12" fill="#4a5568">• Contabilidade de Custos ausente</text>
+    <text x="22" y="98" font-family="Arial" font-size="12" fill="#4a5568">• "Caixa único" para públicos e privados</text>
+    <text x="22" y="120" font-family="Arial" font-size="12" fill="#b91c1c">Ignorância de gestão ≠ Corrupção</text>
+  </g>
+  
+  <!-- Mixing example -->
+  <g transform="translate(560, 480)">
+    <rect x="0" y="0" width="320" height="130" fill="#fee2e2" stroke="#f59e0b" stroke-width="2"/>
+    <text x="160" y="28" font-family="Arial" font-size="13" fill="#d97706" text-anchor="middle" font-weight="bold">EXEMPLO DA MISTURA</text>
+    <line x1="22" y1="48" x2="298" y2="48" stroke="#c0c0c0"/>
+    <text x="22" y="75" font-family="Arial" font-size="12" fill="#1a365d">• Adubo (venda alface) → conta lavoura</text>
+    <text x="22" y="98" font-family="Arial" font-size="12" fill="#1a365d">• Telha (verba pública) → conta convênio</text>
+    <text x="22" y="118" font-family="Arial" font-size="11" fill="#4a5568">Se não segregado = aparência de desvio</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="48" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">A ENTIDADE HÍBRIDA</text>
+  <text x="640" y="98" font-family="Arial" font-size="20" fill="#b91c1c" text-anchor="middle">Mistura de Fins Públicos e Privados</text>
+</svg>

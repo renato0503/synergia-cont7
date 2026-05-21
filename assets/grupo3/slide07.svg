@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Revenue flow diagram -->
+  <g transform="translate(640, 190)">
+    <text x="0" y="0" font-family="Arial" font-size="30" fill="#1a365d" text-anchor="middle" font-weight="bold">A RECEITA DE CONTRAPARTIDA</text>
+    <text x="0" y="42" font-family="Arial" font-size="17" fill="#4a5568" text-anchor="middle">Prova de que o Barracão foi Investimento, não Desvio</text>
+    
+    <!-- Harvest sale box -->
+    <g transform="translate(-370, 100)">
+      <rect x="0" y="0" width="210" height="110" fill="#d1fae5" stroke="#15803d" stroke-width="3" rx="15"/>
+      <text x="105" y="32" font-family="Arial" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">VENDA HORTALIÇAS</text>
+      <text x="105" y="65" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Embrapa: R$ 12.000/ha</text>
+      <text x="105" y="88" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Receita Líquida</text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <path d="M-160,155 L-55,155" fill="none" stroke="#15803d" stroke-width="5"/>
+    <polygon points="-55,155 -78,145 -78,165" fill="#15803d"/>
+    
+    <!-- Profit box -->
+    <g transform="translate(0, 100)">
+      <rect x="0" y="0" width="190" height="110" fill="#fef3c7" stroke="#b45309" stroke-width="3" rx="15"/>
+      <text x="95" y="32" font-family="Arial" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">LUCRO AGRÍCOLA</text>
+      <text x="95" y="65" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Caixa Cooperativa</text>
+      <text x="95" y="88" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Receita própria</text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <path d="M190,155 L295,155" fill="none" stroke="#b45309" stroke-width="5"/>
+    <polygon points="295,155 272,145 272,165" fill="#b45309"/>
+    
+    <!-- Investment box -->
+    <g transform="translate(365, 100)">
+      <rect x="0" y="0" width="190" height="110" fill="#fee2e2" stroke="#b91c1c" stroke-width="3" rx="15"/>
+      <text x="95" y="32" font-family="Arial" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="bold">BARRACÃO</text>
+      <text x="95" y="65" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Pago com lucro</text>
+      <text x="95" y="88" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Não com verba pública!</text>
+    </g>
+  </g>
+  
+  <!-- Vegetables at market -->
+  <g transform="translate(150, 470)">
+    <ellipse cx="0" cy="0" rx="90" ry="55" fill="#d4a574" opacity="0.5"/>
+    <g transform="translate(-65, -22)">
+      <ellipse cx="0" cy="0" rx="45" ry="28" fill="#d4a574"/>
+      <circle cx="-18" cy="-18" r="14" fill="#ff6347"/>
+      <circle cx="12" cy="-12" r="12" fill="#228b22"/>
+    </g>
+    <g transform="translate(25, -10)">
+      <ellipse cx="0" cy="0" rx="40" ry="25" fill="#c4956a"/>
+      <ellipse cx="-12" cy="-10" rx="18" ry="12" fill="#ffd700"/>
+    </g>
+    <text x="70" y="35" font-family="Arial" font-size="32" fill="#10b981" font-weight="bold">$</text>
+  </g>
+  
+  <!-- Construction materials -->
+  <g transform="translate(450, 490)">
+    <rect x="0" y="0" width="88" height="110" fill="#ffffff" stroke="#c0c0c0"/>
+    <rect x="12" y="22" width="64" height="66" fill="#3b82f6"/>
+    <text x="44" y="100" font-family="Arial" font-size="11" fill="#1a365d" text-anchor="middle">Tinta</text>
+  </g>
+  <g transform="translate(570, 500)">
+    <rect x="0" y="0" width="88" height="110" fill="#ffffff" stroke="#c0c0c0"/>
+    <rect x="12" y="22" width="64" height="66" fill="#f59e0b"/>
+    <text x="44" y="100" font-family="Arial" font-size="11" fill="#1a365d" text-anchor="middle">Tinta</text>
+  </g>
+  <text x="615" y="630" font-family="Arial" font-size="13" fill="#4a5568">→ Reinvestimento nas casas</text>
+  
+  <!-- Worker -->
+  <g transform="translate(930, 470)">
+    <circle cx="0" cy="-42" r="30" fill="#f5deb3"/>
+    <rect x="-25" y="-12" width="50" height="65" fill="#b45309"/>
+    <rect x="28" y="-32" width="55" height="45" fill="#d4a574"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="48" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">A RECEITA DE CONTRAPARTIDA</text>
+  <text x="640" y="98" font-family="Arial" font-size="20" fill="#15803d" text-anchor="middle">Lucro Agrícola → Manutenção das Casas Sociais</text>
+</svg>

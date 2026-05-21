@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Flip chart -->
+  <g transform="translate(640, 190)">
+    <rect x="-210" y="270" width="22" height="165" fill="#5c3d2e"/>
+    <rect x="188" y="270" width="22" height="165" fill="#5c3d2e"/>
+    <rect x="-230" y="400" width="460" height="22" fill="#8b7355"/>
+    
+    <rect x="-195" y="-165" width="390" height="435" fill="#ffffff" stroke="#c0c0c0"/>
+    
+    <!-- Question 1 -->
+    <g transform="translate(0, -120)">
+      <rect x="-160" y="0" width="320" height="85" fill="#fef3c7" stroke="#f59e0b" rx="10"/>
+      <text x="0" y="12" font-family="Arial" font-size="15" fill="#d97706" text-anchor="middle" font-weight="bold">QUESITO 01</text>
+      <text x="0" y="38" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">O barracão atende finalidade coletiva?</text>
+      <text x="0" y="65" font-family="Arial" font-size="12" fill="#10b981" text-anchor="middle">✓ SIM - Centro de segurança alimentar</text>
+    </g>
+    
+    <!-- Question 2 -->
+    <g transform="translate(0, 0)">
+      <rect x="-160" y="0" width="320" height="85" fill="#fef3c7" stroke="#b91c1c" rx="10"/>
+      <text x="0" y="12" font-family="Arial" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="bold">QUESITO 02</text>
+      <text x="0" y="38" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Proporcionalidade recurso/benefício?</text>
+      <text x="0" y="65" font-family="Arial" font-size="12" fill="#10b981" text-anchor="middle">✓ SIM - R$ 45k beneficia 200 famílias</text>
+    </g>
+    
+    <!-- Question 3 -->
+    <g transform="translate(0, 120)">
+      <rect x="-160" y="0" width="320" height="85" fill="#fef3c7" stroke="#15803d" rx="10"/>
+      <text x="0" y="12" font-family="Arial" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">QUESITO 03</text>
+      <text x="0" y="38" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Viabilidade compensação ambiental?</text>
+      <text x="0" y="65" font-family="Arial" font-size="12" fill="#10b981" text-anchor="middle">✓ SIM - via TAC + provisionamento</text>
+    </g>
+  </g>
+  
+  <!-- Mediator pointing -->
+  <g transform="translate(180, 340)">
+    <circle cx="0" cy="0" r="32" fill="#15803d"/>
+    <rect x="-28" y="32" width="56" height="72" fill="#1a365d"/>
+    <path d="M28,45 L135,5" fill="none" stroke="#f5deb3" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="135" cy="5" r="12" fill="#f5deb3"/>
+  </g>
+  
+  <!-- Audience -->
+  <g transform="translate(950, 440)">
+    <circle cx="-65" cy="-32" r="28" fill="#f5deb3"/>
+    <rect x="-54" y="0" width="44" height="55" fill="#2d3748"/>
+    <circle cx="0" cy="-28" r="25" fill="#f5deb3"/>
+    <rect x="-20" y="4" width="40" height="51" fill="#1a365d"/>
+    <circle cx="65" cy="-32" r="28" fill="#f5deb3"/>
+    <rect x="54" y="0" width="44" height="55" fill="#2d3748"/>
+  </g>
+  
+  <!-- MP badge -->
+  <g transform="translate(1100, 70)">
+    <rect x="0" y="0" width="110" height="65" fill="#1a365d" rx="5"/>
+    <text x="55" y="27" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">MINISTÉRIO</text>
+    <text x="55" y="48" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle">PÚBLICO</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="48" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">QUESITOS DE MEDIAÇÃO</text>
+  <text x="640" y="98" font-family="Arial" font-size="20" fill="#4a5568" text-anchor="middle">Perguntas Técnicas para Mesa de Conciliação do MP</text>
+</svg>

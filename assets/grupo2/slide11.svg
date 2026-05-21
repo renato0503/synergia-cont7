@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Flowchart -->
+  <g transform="translate(640, 140)">
+    <text x="0" y="0" font-family="Arial" font-size="30" fill="#1a365d" text-anchor="middle" font-weight="bold">PLANO DE CONTAS POR PROJETOS SOCIAIS</text>
+    <text x="0" y="38" font-family="Arial" font-size="17" fill="#4a5568" text-anchor="middle">Estrutura de Regularização - Grupo 02</text>
+    
+    <rect x="-470" y="65" width="940" height="420" fill="#ffffff" stroke="#1a365d" stroke-width="2" rx="15"/>
+    
+    <!-- Public column -->
+    <g transform="translate(-310, 100)">
+      <rect x="-125" y="-32" width="250" height="55" fill="#3b82f6" rx="10"/>
+      <text x="0" y="6" font-family="Arial" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold">PROJETO PÚBLICO</text>
+      
+      <rect x="-105" y="55" width="210" height="65" fill="#dbeafe" stroke="#3b82f6" rx="5"/>
+      <text x="0" y="85" font-family="monospace" font-size="12" fill="#1a365d" text-anchor="middle">1.2.4.1.01.00.00</text>
+      <text x="0" y="108" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Habitações - REURB</text>
+      
+      <rect x="-105" y="140" width="210" height="65" fill="#dbeafe" stroke="#3b82f6" rx="5"/>
+      <text x="0" y="170" font-family="monospace" font-size="12" fill="#1a365d" text-anchor="middle">2.1.1.1.02.00.00</text>
+      <text x="0" y="193" font-family="Arial" font-size="12" fill="#f59e0b" text-anchor="middle">AGUARDA SEMA</text>
+      
+      <circle cx="95" cy="82" r="18" fill="#f59e0b"/>
+      <text x="95" y="88" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="middle">!</text>
+    </g>
+    
+    <!-- Divider -->
+    <line x1="0" y1="85" x2="0" y2="440" stroke="#c0c0c0" stroke-width="2" stroke-dasharray="10,5"/>
+    
+    <!-- Private column -->
+    <g transform="translate(210, 100)">
+      <rect x="-125" y="-32" width="250" height="55" fill="#15803d" rx="10"/>
+      <text x="0" y="6" font-family="Arial" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold">PROJETO COMUNITÁRIO</text>
+      
+      <rect x="-105" y="55" width="210" height="65" fill="#d1fae5" stroke="#15803d" rx="5"/>
+      <text x="0" y="85" font-family="monospace" font-size="12" fill="#1a365d" text-anchor="middle">1.2.4.1.02.00.00</text>
+      <text x="0" y="108" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Infraestrutura (Barracão)</text>
+      
+      <rect x="-105" y="140" width="210" height="65" fill="#d1fae5" stroke="#15803d" rx="5"/>
+      <text x="0" y="170" font-family="monospace" font-size="12" fill="#1a365d" text-anchor="middle">3.2.1.1.01.00.00</text>
+      <text x="0" y="193" font-family="Arial" font-size="12" fill="#4ade80" text-anchor="middle">RETIFICADO ✓</text>
+      
+      <circle cx="95" cy="82" r="18" fill="#4ade80"/>
+      <path d="M88,82 L94,88 L104,76" fill="none" stroke="#ffffff" stroke-width="2"/>
+    </g>
+    
+    <!-- Provisions -->
+    <g transform="translate(0, 350)">
+      <rect x="-210" y="0" width="420" height="65" fill="#fee2e2" stroke="#b91c1c" rx="10"/>
+      <text x="-85" y="26" font-family="monospace" font-size="12" fill="#b91c1c" text-anchor="middle">2.1.1.1.02.00.00</text>
+      <text x="130" y="26" font-family="Arial" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="bold">Provisão Passivos Ambientais</text>
+      <text x="335" y="26" font-family="Arial" font-size="13" fill="#b91c1c" text-anchor="middle">R$ 60.000 (Bloqueado)</text>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(90, 620)">
+    <rect x="0" y="0" width="160" height="55" fill="#dbeafe" stroke="#3b82f6" rx="5"/>
+    <rect x="180" y="0" width="160" height="55" fill="#d1fae5" stroke="#15803d" rx="5"/>
+    <rect x="360" y="0" width="160" height="55" fill="#fee2e2" stroke="#b91c1c" rx="5"/>
+    <text x="80" y="33" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Público</text>
+    <text x="260" y="33" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Comunitário</text>
+    <text x="440" y="33" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">Provisão</text>
+  </g>
+  
+  <!-- Golden rule -->
+  <g transform="translate(720, 620)">
+    <rect x="0" y="0" width="520" height="55" fill="#1a365d" rx="27"/>
+    <text x="260" y="35" font-family="Arial" font-size="17" fill="#ffd700" text-anchor="middle" font-weight="bold">REGRA: Centro de Custo Separado por Projeto</text>
+  </g>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#1e293b"/>
+  <rect width="1280" height="720" fill="url(#grid3)"/>
+  
+  <!-- Desk -->
+  <rect x="180" y="440" width="920" height="200" fill="#475569"/>
+  <rect x="180" y="430" width="920" height="20" fill="#64748b"/>
+  
+  <!-- Two forensic accountants -->
+  <g transform="translate(350, 260)">
+    <circle cx="0" cy="0" r="42" fill="#f5deb3"/>
+    <rect x="-36" y="42" width="72" height="105" fill="#0f172a"/>
+    <circle cx="32" cy="-18" r="32" fill="none" stroke="#c0c0c0" stroke-width="4"/>
+    <circle cx="32" cy="-18" r="24" fill="#4a90d9" opacity="0.3"/>
+    <rect x="55" y="0" width="45" height="14" fill="#8b7355" transform="rotate(45, 55, 0)"/>
+  </g>
+  <g transform="translate(540, 270)">
+    <circle cx="0" cy="0" r="40" fill="#f5deb3"/>
+    <rect x="-34" y="38" width="68" height="100" fill="#1e3a5f"/>
+    <rect x="42" y="22" width="35" height="45" fill="#ffffff"/>
+  </g>
+  
+  <!-- Documents on desk -->
+  <g transform="translate(680, 340)">
+    <rect x="0" y="0" width="270" height="190" fill="#ffffff" transform="rotate(-5)"/>
+    <text x="135" y="32" font-family="Arial" font-size="15" fill="#1a365d" text-anchor="middle" transform="rotate(-5)">EXTRATO BANCÁRIO</text>
+    <line x1="30" y1="52" x2="240" y2="52" stroke="#c0c0c0"/>
+    <text x="40" y="78" font-family="monospace" font-size="11" fill="#4a5568">Data: 15/03/2025</text>
+    <text x="40" y="100" font-family="monospace" font-size="11" fill="#4a5568">Débito: R$ 45.000,00</text>
+    <text x="40" y="122" font-family="monospace" font-size="11" fill="#b91c1c">Histórico: MATERIAL CONST.</text>
+    <text x="40" y="150" font-family="monospace" font-size="10" fill="#94a3b8">Convênio: 2025/001</text>
+  </g>
+  <g transform="translate(380, 370)">
+    <rect x="0" y="0" width="220" height="160" fill="#ffffff" transform="rotate(3)"/>
+    <text x="110" y="32" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle" transform="rotate(3)">NOTA FISCAL</text>
+    <line x1="20" y1="52" x2="200" y2="52" stroke="#c0c0c0"/>
+    <text x="30" y="78" font-family="monospace" font-size="10" fill="#4a5568">NF-e: 12345</text>
+    <text x="30" y="100" font-family="monospace" font-size="10" fill="#4a5568">CNPJ: 12.345/0001</text>
+    <text x="30" y="122" font-family="monospace" font-size="10" fill="#4a5568">Valor: R$ 175.000</text>
+  </g>
+  
+  <!-- Laptop with spreadsheet -->
+  <g transform="translate(980, 300)">
+    <rect x="0" y="0" width="220" height="145" fill="#333333"/>
+    <rect x="12" y="12" width="196" height="110" fill="#1e293b"/>
+    <rect x="22" y="28" width="65" height="16" fill="#10b981"/>
+    <rect x="100" y="28" width="85" height="16" fill="#10b981"/>
+    <rect x="22" y="52" width="65" height="16" fill="#fef3c7"/>
+    <rect x="100" y="52" width="85" height="16" fill="#b91c1c"/>
+    <rect x="22" y="76" width="65" height="16" fill="#fef3c7"/>
+    <rect x="100" y="76" width="85" height="16" fill="#10b981"/>
+    <rect x="35" y="128" width="150" height="12" fill="#666666"/>
+  </g>
+  
+  <!-- Crime scene photo -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="200" height="155" fill="#ffffff" stroke="#c0c0c0" padding="10"/>
+    <rect x="12" y="12" width="176" height="131" fill="#d4d4d4"/>
+    <rect x="35" y="55" width="70" height="60" fill="#a0a0a0"/>
+    <rect x="115" y="45" width="55" height="70" fill="#8b7355"/>
+    <text x="100" y="155" font-family="Arial" font-size="11" fill="#666666" text-anchor="middle">Foto: Barracão</text>
+  </g>
+  
+  <!-- Evidence markers -->
+  <g transform="translate(160, 540)">
+    <polygon points="0,0 28,-45 56,0" fill="#ffffff"/>
+    <text x="28" y="-10" font-family="Arial" font-size="16" fill="#b91c1c" font-weight="bold">1</text>
+  </g>
+  <g transform="translate(540, 560)">
+    <polygon points="0,0 28,-45 56,0" fill="#ffffff"/>
+    <text x="28" y="-10" font-family="Arial" font-size="16" fill="#b91c1c" font-weight="bold">2</text>
+  </g>
+  <g transform="translate(920, 550)">
+    <polygon points="0,0 28,-45 56,0" fill="#ffffff"/>
+    <text x="28" y="-10" font-family="Arial" font-size="16" fill="#b91c1c" font-weight="bold">3</text>
+  </g>
+  
+  <!-- Investigation steps -->
+  <g transform="translate(680, 550)">
+    <rect x="0" y="0" width="520" height="85" fill="#334155" rx="10"/>
+    <text x="90" y="30" font-family="Arial" font-size="14" fill="#4ade80" text-anchor="middle" font-weight="bold">PASSO 1</text>
+    <text x="90" y="55" font-family="Arial" font-size="11" fill="#94a3b8" text-anchor="middle">Fluxo de Caixa</text>
+    <text x="270" y="30" font-family="Arial" font-size="14" fill="#4ade80" text-anchor="middle" font-weight="bold">PASSO 2</text>
+    <text x="270" y="55" font-family="Arial" font-size="11" fill="#94a3b8" text-anchor="middle">NF-e SEFAZ-MT</text>
+    <text x="440" y="30" font-family="Arial" font-size="14" fill="#4ade80" text-anchor="middle" font-weight="bold">PASSO 3</text>
+    <text x="440" y="55" font-family="Arial" font-size="11" fill="#94a3b8" text-anchor="middle">Vistoria in loco</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="55" font-family="Arial" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">METODOLOGIA DE INVESTIGAÇÃO</text>
+  <text x="640" y="100" font-family="Arial" font-size="20" fill="#94a3b8" text-anchor="middle">Peritos Assistentes - Rastreamento do Fluxo Financeiro</text>
+</svg>

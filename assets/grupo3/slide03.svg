@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f5f0dc"/>
+  
+  <!-- Statute of Land book -->
+  <g transform="translate(100, 160)">
+    <rect x="0" y="0" width="300" height="390" fill="#5c3d2e"/>
+    <rect x="18" y="18" width="264" height="354" fill="#8b7355"/>
+    <text x="150" y="70" font-family="serif" font-size="24" fill="#ffd700" text-anchor="middle" font-weight="bold">ESTATUTO</text>
+    <text x="150" y="108" font-family="serif" font-size="24" fill="#ffd700" text-anchor="middle" font-weight="bold">DA TERRA</text>
+    <line x1="45" y1="135" x2="255" y2="135" stroke="#ffd700" stroke-width="2"/>
+    <text x="150" y="172" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Lei 4.504/64</text>
+    <text x="150" y="205" font-family="Arial" font-size="13" fill="#d4d4d4" text-anchor="middle">Decreto 59.566/66</text>
+    <rect x="35" y="240" width="110" height="90" fill="#f5f0dc"/>
+    <rect x="165" y="240" width="110" height="90" fill="#e8e8d0"/>
+    <text x="90" y="290" font-family="Arial" font-size="11" fill="#1a365d" text-anchor="middle">Parceria Rural</text>
+  </g>
+  
+  <!-- Contract signing -->
+  <g transform="translate(550, 280)">
+    <rect x="-165" y="55" width="330" height="195" fill="#fff8dc" stroke="#8b7355" stroke-width="2"/>
+    <text x="0" y="90" font-family="Arial" font-size="18" fill="#1a365d" text-anchor="middle" font-weight="bold">CONTRATO DE PARCERIA</text>
+    <line x1="-130" y1="112" x2="130" y2="112" stroke="#c0c0c0"/>
+    <text x="-108" y="142" font-family="Arial" font-size="12" fill="#4a5568">Proprietário: _________________</text>
+    <text x="-108" y="170" font-family="Arial" font-size="12" fill="#4a5568">Cooperativa: _________________</text>
+    <text x="-108" y="198" font-family="Arial" font-size="12" fill="#4a5568">Repartição: 50% / 50%</text>
+    <path d="M-88,250 L-22,218" fill="none" stroke="#f5deb3" stroke-width="14" stroke-linecap="round"/>
+    <path d="M88,250 L22,218" fill="none" stroke="#f5deb3" stroke-width="14" stroke-linecap="round"/>
+    <line x1="-18" y1="212" x2="18" y2="222" stroke="#1a365d" stroke-width="4"/>
+  </g>
+  
+  <!-- Tractor -->
+  <g transform="translate(950, 230)">
+    <rect x="0" y="45" width="110" height="65" fill="#ff4500"/>
+    <rect x="110" y="55" width="65" height="55" fill="#ff6347"/>
+    <circle cx="35" cy="110" r="38" fill="#333333"/>
+    <circle cx="35" cy="110" r="22" fill="#666666"/>
+    <circle cx="145" cy="105" r="32" fill="#333333"/>
+    <circle cx="145" cy="105" r="20" fill="#666666"/>
+  </g>
+  
+  <!-- Harvest crates -->
+  <g transform="translate(980, 420)">
+    <rect x="0" y="0" width="70" height="55" fill="#d4a574"/>
+    <rect x="80" y="12" width="70" height="55" fill="#c4956a"/>
+    <rect x="160" y="6" width="70" height="55" fill="#d4a574"/>
+    <circle cx="35" cy="-12" r="18" fill="#ff6347"/>
+    <circle cx="115" cy="-5" r="15" fill="#228b22"/>
+  </g>
+  
+  <!-- Profit sharing -->
+  <g transform="translate(480, 540)">
+    <rect x="0" y="0" width="620" height="110" fill="#ffffff" stroke="#b45309" stroke-width="2" rx="10"/>
+    <text x="310" y="32" font-family="Arial" font-size="15" fill="#1a365d" text-anchor="middle" font-weight="bold">REPARTIÇÃO DE LUCROS E RISCOS</text>
+    <rect x="55" y="52" width="210" height="45" fill="#1a365d" rx="5"/>
+    <text x="160" y="83" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Proprietário 50%</text>
+    <rect x="365" y="52" width="210" height="45" fill="#b45309" rx="5"/>
+    <text x="470" y="83" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Cooperativa 50%</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="55" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">A PARCERIA RURAL</text>
+  <text x="640" y="105" font-family="Arial" font-size="20" fill="#4a5568" text-anchor="middle">Estatuto da Terra - Repartição de Riscos e Lucros</text>
+</svg>

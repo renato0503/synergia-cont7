@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Single bank account concept -->
+  <g transform="translate(640, 180)">
+    <rect x="-320" y="0" width="640" height="220" fill="#ffffff" stroke="#b91c1c" stroke-width="4" rx="20"/>
+    <text x="0" y="45" font-family="Arial" font-size="26" fill="#b91c1c" text-anchor="middle" font-weight="bold">CONTA BANCÁRIA ÚNICA</text>
+    <text x="0" y="78" font-family="Arial" font-size="17" fill="#4a5568" text-anchor="middle">O Pecado Original da Gestão Comunitária</text>
+    
+    <g transform="translate(-260, 110)">
+      <rect x="0" y="0" width="165" height="70" fill="#3b82f6" rx="10"/>
+      <text x="82" y="28" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">VERBA PÚBLICA</text>
+      <text x="82" y="52" font-family="Arial" font-size="11" fill="#dbeafe" text-anchor="middle">Convênio R$ 5M</text>
+    </g>
+    
+    <g transform="translate(95, 110)">
+      <rect x="0" y="0" width="165" height="70" fill="#10b981" rx="10"/>
+      <text x="82" y="28" font-family="Arial" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">VENDAS ALFACE</text>
+      <text x="82" y="52" font-family="Arial" font-size="11" fill="#d1fae5" text-anchor="middle">Receita Cooperativa</text>
+    </g>
+    
+    <circle cx="0" cy="125" r="28" fill="#b91c1c"/>
+    <text x="0" y="133" font-family="Arial" font-size="28" fill="#ffffff" text-anchor="middle">✗</text>
+  </g>
+  
+  <!-- Mixed receipts -->
+  <g transform="translate(130, 440)">
+    <rect x="0" y="0" width="270" height="195" fill="#ffffff" stroke="#c0c0c0" stroke-width="2"/>
+    <text x="135" y="28" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle" font-weight="bold">NOTAS FISCAIS MIXADAS</text>
+    <rect x="22" y="55" width="226" height="45" fill="#fee2e2"/>
+    <text x="32" y="78" font-family="Arial" font-size="11" fill="#b91c1c">CIMENTO - R$ 45.000 (Convênio?)</text>
+    <text x="32" y="95" font-family="Arial" font-size="10" fill="#4a5568">Sem código do convênio</text>
+    <rect x="22" y="110" width="226" height="45" fill="#d1fae5"/>
+    <text x="32" y="133" font-family="Arial" font-size="11" fill="#10b981">VENDAS ALFACE - R$ 2.500</text>
+    <text x="32" y="150" font-family="Arial" font-size="10" fill="#4a5568">Mesma pasta/folder</text>
+  </g>
+  
+  <!-- Confused accountant -->
+  <g transform="translate(950, 380)">
+    <circle cx="0" cy="-65" r="45" fill="#f5deb3"/>
+    <circle cx="-14" cy="-78" r="6" fill="#1a365d"/>
+    <circle cx="14" cy="-78" r="6" fill="#1a365d"/>
+    <path d="M-12,-48 Q0,-42 12,-48" fill="none" stroke="#1a365d" stroke-width="2"/>
+    <rect x="-38" y="-20" width="76" height="100" fill="#2d3748"/>
+    <text x="55" y="-85" font-family="Arial" font-size="32" fill="#b91c1c">?</text>
+    <text x="78" y="-65" font-family="Arial" font-size="26" fill="#f59e0b">?</text>
+  </g>
+  
+  <!-- LRF violation note -->
+  <g transform="translate(480, 540)">
+    <rect x="0" y="0" width="620" height="85" fill="#fee2e2" stroke="#b91c1c" stroke-width="2" rx="10"/>
+    <text x="310" y="32" font-family="Arial" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="bold">LRF ART. 22, 23, 70 - SEGREGAÇÃO OBRIGATÓRIA</text>
+    <text x="310" y="58" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Contas bancárias separadas por natureza de recursos</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="50" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">GESTÃO COMUNITÁRIA PRECÁRIA</text>
+  <text x="640" y="100" font-family="Arial" font-size="20" fill="#b91c1c" text-anchor="middle">Mistura de Caixa - Falha na Segregação</text>
+</svg>

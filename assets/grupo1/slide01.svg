@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d"/>
+      <stop offset="100%" stop-color="#2d5a87"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a7c59"/>
+      <stop offset="100%" stop-color="#2d5a3d"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  
+  <!-- Hills -->
+  <ellipse cx="200" cy="500" rx="400" ry="200" fill="#2d5a3d" opacity="0.6"/>
+  <ellipse cx="900" cy="520" rx="500" ry="200" fill="#2d5a3d" opacity="0.5"/>
+  <ellipse cx="640" cy="600" rx="600" ry="200" fill="url(#ground)"/>
+  
+  <!-- City buildings -->
+  <g fill="#4a5568">
+    <rect x="50" y="250" width="80" height="150"/>
+    <rect x="150" y="200" width="100" height="200"/>
+    <rect x="270" y="280" width="70" height="120"/>
+  </g>
+  <g fill="#87ceeb" opacity="0.6">
+    <rect x="60" y="270" width="30" height="30"/>
+    <rect x="100" y="260" width="30" height="30"/>
+    <rect x="165" y="230" width="40" height="40"/>
+    <rect x="220" y="220" width="40" height="40"/>
+  </g>
+  
+  <!-- Farm with houses -->
+  <g transform="translate(400, 350)">
+    <rect x="0" y="50" width="80" height="60" fill="#d4a574"/>
+    <polygon points="0,50 40,10 80,50" fill="#8b4513"/>
+    <rect x="30" y="70" width="20" height="40" fill="#5c3d2e"/>
+  </g>
+  <g transform="translate(500, 360)">
+    <rect x="0" y="50" width="80" height="60" fill="#c4956a"/>
+    <polygon points="0,50 40,10 80,50" fill="#8b4513"/>
+  </g>
+  <g transform="translate(600, 345)">
+    <rect x="0" y="50" width="80" height="60" fill="#d4a574"/>
+    <polygon points="0,50 40,10 80,50" fill="#8b4513"/>
+  </g>
+  
+  <!-- 200 families representation -->
+  <g fill="#d4a574">
+    <rect x="720" y="420" width="35" height="30"/>
+    <polygon points="720,420 737,395 755,420"/>
+    <rect x="760" y="430" width="35" height="30"/>
+    <polygon points="760,430 777,405 795,430"/>
+    <rect x="800" y="415" width="35" height="30"/>
+    <polygon points="800,415 817,390 835,415"/>
+    <rect x="840" y="425" width="35" height="30"/>
+    <polygon points="840,425 857,400 875,425"/>
+  </g>
+  
+  <!-- Money bag with government seal -->
+  <g transform="translate(1050, 400)">
+    <ellipse cx="0" cy="40" rx="45" ry="35" fill="#c0c0c0"/>
+    <rect x="-35" y="5" width="70" height="70" rx="10" fill="#d4af37"/>
+    <text x="0" y="55" font-family="Arial" font-size="24" fill="#1a365d" text-anchor="middle" font-weight="bold">R$</text>
+    <circle cx="0" cy="-10" r="20" fill="#b91c1c"/>
+    <text x="0" y="-5" font-family="Arial" font-size="10" fill="#ffffff" text-anchor="middle">GOV</text>
+  </g>
+  
+  <!-- Accountant with magnifying glass -->
+  <g transform="translate(950, 280)">
+    <circle cx="0" cy="0" r="30" fill="#f5deb3"/>
+    <rect x="-25" y="30" width="50" height="70" fill="#1a365d"/>
+    <circle cx="40" cy="0" r="25" fill="none" stroke="#c0c0c0" stroke-width="4"/>
+    <circle cx="40" cy="0" r="18" fill="#87ceeb" opacity="0.4"/>
+    <rect x="60" y="-8" width="40" height="12" fill="#5c3d2e" transform="rotate(45, 60, -8)"/>
+  </g>
+  
+  <!-- Scale of justice -->
+  <g transform="translate(80, 120)">
+    <rect x="-4" y="0" width="8" height="100" fill="#c0c0c0"/>
+    <rect x="-50" y="-5" width="100" height="10" fill="#a0a0a0"/>
+    <line x1="-40" y1="5" x2="-40" y2="60" stroke="#c0c0c0" stroke-width="3"/>
+    <line x1="40" y1="5" x2="40" y2="60" stroke="#c0c0c0" stroke-width="3"/>
+    <path d="M-40,60 Q0,90 40,60" fill="none" stroke="#c0c0c0" stroke-width="3"/>
+    <circle cx="0" cy="-20" r="18" fill="#ffd700"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="100" font-family="Arial" font-size="42" font-weight="bold" fill="#ffd700" text-anchor="middle">PERÍCIA CONTÁBIL</text>
+  <text x="640" y="145" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle">Auditoria Forense</text>
+  <text x="640" y="650" font-family="Arial" font-size="18" fill="#e2e8f0" text-anchor="middle">Conflito de Terras - Várzea Grande/MT | R$ 5.000.000,00</text>
+</svg>

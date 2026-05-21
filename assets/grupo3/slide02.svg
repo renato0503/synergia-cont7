@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Property boundary -->
+  <g transform="translate(640, 340)">
+    <rect x="-420" y="-220" width="840" height="440" fill="none" stroke="#1a365d" stroke-width="3" stroke-dasharray="15,10"/>
+    <text x="0" y="-245" font-family="Arial" font-size="22" fill="#1a365d" text-anchor="middle" font-weight="bold">PROPRIEDADE HÍBRIDA - 500 ha</text>
+    
+    <!-- Houses -->
+    <g transform="translate(-280, -130)">
+      <rect x="0" y="0" width="90" height="68" fill="#d4a574"/>
+      <polygon points="0,0 45,-35 90,0" fill="#8b4513"/>
+      <rect x="35" y="38" width="22" height="30" fill="#5c3d2e"/>
+      <text x="45" y="-50" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">MORADIA</text>
+    </g>
+    <g transform="translate(-140, -140)">
+      <rect x="0" y="0" width="90" height="68" fill="#c4956a"/>
+      <polygon points="0,0 45,-30 90,0" fill="#8b4513"/>
+      <text x="45" y="-45" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">MORADIA</text>
+    </g>
+    <g transform="translate(20, -125)">
+      <rect x="0" y="0" width="90" height="68" fill="#d4a574"/>
+      <polygon points="0,0 45,-33 90,0" fill="#8b4513"/>
+      <text x="45" y="-48" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">MORADIA</text>
+    </g>
+    
+    <!-- Barracão -->
+    <g transform="translate(200, -60)">
+      <rect x="0" y="0" width="135" height="90" fill="#a0a0a0"/>
+      <polygon points="0,0 67,-40 135,0" fill="#696969"/>
+      <text x="67" y="-55" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle">BARRACÃO</text>
+    </g>
+    
+    <!-- Crops -->
+    <g fill="#228b22" opacity="0.6">
+      <rect x="-380" y="55" width="760" height="22"/>
+      <rect x="-380" y="95" width="760" height="22"/>
+      <rect x="-380" y="135" width="760" height="22"/>
+      <rect x="-380" y="175" width="760" height="22"/>
+    </g>
+    <text x="0" y="130" font-family="Arial" font-size="18" fill="#228b22" text-anchor="middle" font-weight="bold">PRODUÇÃO AGRÍCOLA</text>
+    
+    <!-- Vegetables -->
+    <g transform="translate(-220, 65)">
+      <ellipse cx="0" cy="0" rx="35" ry="22" fill="#ff6347"/>
+      <ellipse cx="55" cy="5" rx="28" ry="18" fill="#228b22"/>
+      <ellipse cx="110" cy="-5" rx="32" ry="22" fill="#ffd700"/>
+    </g>
+  </g>
+  
+  <!-- Families working -->
+  <g transform="translate(180, 540)">
+    <circle cx="0" cy="-32" r="24" fill="#f5deb3"/>
+    <rect x="-19" y="-8" width="38" height="50" fill="#b45309"/>
+    <rect x="22" y="-22" width="45" height="35" fill="#d4a574"/>
+  </g>
+  <g transform="translate(290, 550)">
+    <circle cx="0" cy="-28" r="22" fill="#f5deb3"/>
+    <rect x="-17" y="-6" width="34" height="45" fill="#1a365d"/>
+  </g>
+  
+  <!-- Thesis box -->
+  <g transform="translate(820, 590)">
+    <rect x="0" y="0" width="420" height="80" fill="#ffffff" stroke="#b45309" stroke-width="3" rx="10"/>
+    <text x="210" y="32" font-family="Arial" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">TESE DA DEFESA</text>
+    <text x="210" y="58" font-family="Arial" font-size="13" fill="#4a5568" text-anchor="middle">Barracão = Ativo Gerador de Caixa para manutenção das casas</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="48" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">MORADIA vs. PRODUÇÃO</text>
+  <text x="640" y="98" font-family="Arial" font-size="20" fill="#b45309" text-anchor="middle">Dualidade da Propriedade Rural - 200 Famílias</text>
+</svg>

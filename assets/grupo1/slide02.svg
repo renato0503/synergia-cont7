@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="aerialSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87ceeb"/>
+      <stop offset="100%" stop-color="#e0f4ff"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#94a3b8" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1280" height="720" fill="url(#aerialSky)"/>
+  <rect width="1280" height="720" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- City zone (left) -->
+  <g fill="#4a5568" opacity="0.7">
+    <rect x="30" y="350" width="80" height="180"/>
+    <rect x="130" y="320" width="100" height="210"/>
+    <rect x="250" y="380" width="70" height="150"/>
+  </g>
+  <text x="140" y="620" font-family="Arial" font-size="16" fill="#1a365d" font-weight="bold">ZONA URBANA</text>
+  
+  <!-- Transition zone -->
+  <rect x="350" y="380" width="150" height="160" fill="#6b7280" opacity="0.5"/>
+  <text x="425" y="600" font-family="Arial" font-size="12" fill="#6b7280">TRANSIÇÃO</text>
+  
+  <!-- Rural property 500ha (right) -->
+  <rect x="520" y="250" width="720" height="400" fill="#4a7c59" opacity="0.8"/>
+  <text x="880" y="290" font-family="Arial" font-size="20" fill="#ffffff" font-weight="bold">FAZENDA 500 ha</text>
+  
+  <!-- Houses cluster -->
+  <g fill="#d4a574">
+    <rect x="580" y="420" width="40" height="35"/>
+    <polygon points="580,420 600,390 620,420"/>
+    <rect x="630" y="430" width="40" height="35"/>
+    <polygon points="630,430 650,400 670,430"/>
+    <rect x="680" y="415" width="40" height="35"/>
+    <polygon points="680,415 700,385 720,415"/>
+    <rect x="730" y="425" width="40" height="35"/>
+    <polygon points="730,425 750,395 770,425"/>
+  </g>
+  <g fill="#c4956a">
+    <rect x="580" y="470" width="35" height="30"/>
+    <rect x="620" y="475" width="35" height="30"/>
+    <rect x="660" y="465" width="35" height="30"/>
+    <rect x="700" y="470" width="35" height="30"/>
+    <rect x="740" y="460" width="35" height="30"/>
+    <rect x="780" y="465" width="35" height="30"/>
+  </g>
+  
+  <!-- Police barrier -->
+  <g transform="translate(540, 390)">
+    <rect x="0" y="0" width="15" height="100" fill="#b91c1c"/>
+    <rect x="40" y="0" width="15" height="100" fill="#b91c1c"/>
+    <rect x="-10" y="30" width="80" height="35" fill="#b91c1c" rx="3"/>
+    <text x="30" y="53" font-family="Arial" font-size="11" fill="#ffffff" font-weight="bold">BLOQUEADO</text>
+  </g>
+  
+  <!-- Money bag -->
+  <g transform="translate(1100, 380)">
+    <ellipse cx="0" cy="50" rx="50" ry="40" fill="#d4af37"/>
+    <rect x="-40" y="10" width="80" height="80" rx="10" fill="#d4af37"/>
+    <text x="0" y="65" font-family="Arial" font-size="22" fill="#1a365d" text-anchor="middle" font-weight="bold">R$</text>
+    <circle cx="0" cy="-10" r="18" fill="#b91c1c"/>
+    <text x="0" y="-3" font-family="Arial" font-size="9" fill="#ffffff" text-anchor="middle">GOV</text>
+  </g>
+  <text x="1100" y="480" font-family="Arial" font-size="14" fill="#1a365d" text-anchor="middle">R$ 5.000.000</text>
+  
+  <!-- Officials inspecting -->
+  <g transform="translate(850, 550)">
+    <circle cx="0" cy="-30" r="25" fill="#f5deb3"/>
+    <rect x="-20" y="-5" width="40" height="55" fill="#1a365d"/>
+  </g>
+  <g transform="translate(910, 560)">
+    <circle cx="0" cy="-25" r="22" fill="#f5deb3"/>
+    <rect x="-18" y="0" width="36" height="50" fill="#2d3748"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 500)">
+    <rect x="0" y="0" width="200" height="130" fill="#ffffff" stroke="#c0c0c0" rx="10"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" fill="#1a365d" text-anchor="middle" font-weight="bold">LEGENDA</text>
+    <rect x="15" y="45" width="25" height="20" fill="#4a5568"/>
+    <text x="50" y="62" font-family="Arial" font-size="12" fill="#1a365d">Zona Urbana</text>
+    <rect x="15" y="75" width="25" height="20" fill="#4a7c59"/>
+    <text x="50" y="92" font-family="Arial" font-size="12" fill="#1a365d">Propriedade Rural</text>
+    <rect x="15" y="105" width="25" height="20" fill="#d4a574"/>
+    <text x="50" y="122" font-family="Arial" font-size="12" fill="#1a365d">Habitação</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="70" font-family="Arial" font-size="36" font-weight="bold" fill="#1a365d" text-anchor="middle">O CONFLITO EM VÁRZEA GRANDE</text>
+  <text x="640" y="115" font-family="Arial" font-size="20" fill="#4a5568" text-anchor="middle">Distrito de Pai André - 500 Hectares | 200 Famílias</text>
+</svg>

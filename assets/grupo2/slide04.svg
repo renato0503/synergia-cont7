@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  
+  <!-- Map view -->
+  <g transform="translate(640, 290)">
+    <rect x="-420" y="-270" width="840" height="540" fill="#e2e8f0" stroke="#1a365d" stroke-width="3"/>
+    
+    <!-- Urban zone -->
+    <rect x="-400" y="-250" width="800" height="110" fill="#94a3b8" opacity="0.4"/>
+    <text x="0" y="-200" font-family="Arial" font-size="18" fill="#1a365d" text-anchor="middle" font-weight="bold">ZONA URBANA - REURB-R</text>
+    
+    <!-- Transition zone -->
+    <rect x="-400" y="-130" width="800" height="90" fill="#f59e0b" opacity="0.3"/>
+    <text x="0" y="-90" font-family="Arial" font-size="14" fill="#d97706" text-anchor="middle">ZONA DE TRANSIÇÃO</text>
+    
+    <!-- Rural zone -->
+    <rect x="-400" y="-30" width="800" height="290" fill="#4a7c59" opacity="0.4"/>
+    <text x="0" y="110" font-family="Arial" font-size="18" fill="#1a365d" text-anchor="middle" font-weight="bold">ZONA RURAL - Produção Agrícola</text>
+    
+    <!-- Boundary lines -->
+    <line x1="-400" y1="-140" x2="400" y2="-140" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10,5"/>
+    <line x1="-400" y1="-30" x2="400" y2="-30" stroke="#4a7c59" stroke-width="2" stroke-dasharray="10,5"/>
+    
+    <!-- Houses -->
+    <g fill="#d4a574">
+      <rect x="-370" y="-230" width="45" height="35"/>
+      <rect x="-305" y="-235" width="45" height="35"/>
+      <rect x="-240" y="-225" width="45" height="35"/>
+      <rect x="-175" y="-218" width="45" height="35"/>
+      <rect x="-110" y="-230" width="45" height="35"/>
+      <rect x="-45" y="-222" width="45" height="35"/>
+      <rect x="20" y="-228" width="45" height="35"/>
+      <rect x="85" y="-218" width="45" height="35"/>
+      <rect x="150" y="-225" width="45" height="35"/>
+      <rect x="215" y="-230" width="45" height="35"/>
+      <rect x="280" y="-220" width="45" height="35"/>
+      <rect x="345" y="-228" width="45" height="35"/>
+    </g>
+    
+    <!-- Crop rows -->
+    <g fill="#228b22" opacity="0.6">
+      <rect x="-380" y="50" width="760" height="18"/>
+      <rect x="-380" y="85" width="760" height="18"/>
+      <rect x="-380" y="120" width="760" height="18"/>
+      <rect x="-380" y="155" width="760" height="18"/>
+      <rect x="-380" y="190" width="760" height="18"/>
+    </g>
+  </g>
+  
+  <!-- Technical document -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="220" height="165" fill="#ffffff" stroke="#1a365d" stroke-width="2"/>
+    <text x="110" y="32" font-family="Arial" font-size="13" fill="#1a365d" text-anchor="middle" font-weight="bold">MAPA TÉCNICO</text>
+    <line x1="20" y1="52" x2="200" y2="52" stroke="#c0c0c0"/>
+    <text x="20" y="78" font-family="Arial" font-size="11" fill="#4a5568">Datum: SIRGAS 2000</text>
+    <text x="20" y="100" font-family="Arial" font-size="11" fill="#4a5568">Escala: 1:5000</text>
+    <text x="20" y="130" font-family="Arial" font-size="11" fill="#15803d">Lei 13.465/17</text>
+  </g>
+  
+  <!-- Surveyor -->
+  <g transform="translate(1050, 530)">
+    <circle cx="0" cy="-42" r="28" fill="#f5deb3"/>
+    <rect x="-22" y="-14" width="44" height="66" fill="#15803d"/>
+    <rect x="28" y="0" width="45" height="55" fill="#333333"/>
+    <rect x="34" y="6" width="33" height="28" fill="#4ade80"/>
+  </g>
+  
+  <!-- Conditioning note -->
+  <g transform="translate(130, 580)">
+    <rect x="0" y="0" width="420" height="85" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" rx="10"/>
+    <text x="210" y="32" font-family="Arial" font-size="15" fill="#d97706" text-anchor="middle" font-weight="bold">CONDICIONANTE AMBIENTAL</text>
+    <text x="210" y="60" font-family="Arial" font-size="12" fill="#4a5568" text-anchor="middle">Exige anuência da SEMA + Estudos de Viabilidade</text>
+  </g>
+  
+  <!-- Georeferencing -->
+  <g transform="translate(880, 50)">
+    <rect x="0" y="0" width="280" height="65" fill="#1e293b" rx="5"/>
+    <text x="140" y="28" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">LAT: -15.6523 | LONG: -56.1245</text>
+    <text x="140" y="50" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Pai André, Várzea Grande/MT</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="45" font-family="Arial" font-size="38" font-weight="bold" fill="#1a365d" text-anchor="middle">REURB E ZONA DE TRANSIÇÃO</text>
+  <text x="640" y="95" font-family="Arial" font-size="20" fill="#d97706" text-anchor="middle">Lei 13.465/17 - Regularização Fundiária Rural</text>
+</svg>

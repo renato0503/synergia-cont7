@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="forest" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#228b22"/>
+      <stop offset="100%" stop-color="#006400"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1280" height="720" fill="#87ceeb"/>
+  
+  <!-- Hills -->
+  <ellipse cx="300" cy="550" rx="400" ry="200" fill="#228b22" opacity="0.6"/>
+  <ellipse cx="900" cy="580" rx="500" ry="200" fill="#2d5a3d"/>
+  
+  <!-- Forest reserve area -->
+  <rect x="380" y="180" width="520" height="320" fill="url(#forest)" opacity="0.7"/>
+  <text x="640" y="340" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="bold">RESERVA LEGAL</text>
+  <text x="640" y="375" font-family="Arial" font-size="14" fill="#90ee90" text-anchor="middle">Lei 12.651/12 - Código Florestal</text>
+  
+  <!-- Trees -->
+  <g fill="#006400">
+    <polygon points="420,300 450,160 480,300"/>
+    <polygon points="500,320 535,170 570,320"/>
+    <polygon points="600,280 630,140 660,280"/>
+    <polygon points="700,290 730,150 760,290"/>
+    <polygon points="800,310 830,170 860,310"/>
+  </g>
+  <g fill="#228b22">
+    <polygon points="460,320 480,240 500,320"/>
+    <polygon points="560,300 585,210 610,300"/>
+    <polygon points="670,290 690,220 710,290"/>
+    <polygon points="770,300 795,210 820,300"/>
+  </g>
+  
+  <!-- Fence -->
+  <line x1="350" y1="500" x2="950" y2="500" stroke="#8b4513" stroke-width="8"/>
+  <line x1="350" y1="475" x2="350" y2="550" stroke="#8b4513" stroke-width="8"/>
+  <line x1="950" y1="475" x2="950" y2="550" stroke="#8b4513" stroke-width="8"/>
+  
+  <!-- Red embargo sign -->
+  <g transform="translate(650, 420)">
+    <rect x="-90" y="-45" width="180" height="90" fill="#b91c1c" rx="10"/>
+    <rect x="-85" y="-40" width="170" height="80" fill="none" stroke="#ffffff" stroke-width="3" rx="8"/>
+    <text x="0" y="-10" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">EMBARGO</text>
+    <text x="0" y="18" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">AMBIENTAL</text>
+    <text x="0" y="38" font-family="Arial" font-size="11" fill="#ffd700" text-anchor="middle">SEMA-MT</text>
+  </g>
+  
+  <!-- Bulldozer stopped -->
+  <g transform="translate(480, 530)">
+    <rect x="0" y="30" width="90" height="45" fill="#ffa500"/>
+    <rect x="90" y="40" width="55" height="35" fill="#ffa500"/>
+    <rect x="-20" y="65" width="170" height="25" fill="#333333"/>
+    <circle cx="25" cy="90" r="22" fill="#333333"/>
+    <circle cx="25" cy="90" r="12" fill="#666666"/>
+    <circle cx="115" cy="90" r="22" fill="#333333"/>
+    <circle cx="115" cy="90" r="12" fill="#666666"/>
+    <rect x="-35" y="35" width="22" height="55" fill="#666666"/>
+  </g>
+  
+  <!-- Environmental police officer -->
+  <g transform="translate(820, 560)">
+    <circle cx="0" cy="-30" r="25" fill="#f5deb3"/>
+    <rect x="-20" y="-5" width="40" height="55" fill="#1a365d"/>
+    <rect x="25" y="5" width="45" height="35" fill="#ffffff"/>
+    <line x1="32" y1="15" x2="62" y2="15" stroke="#000" stroke-width="1"/>
+    <line x1="32" y1="23" x2="58" y2="23" stroke="#000" stroke-width="1"/>
+    <line x1="32" y1="31" x2="55" y2="31" stroke="#000" stroke-width="1"/>
+  </g>
+  
+  <!-- River -->
+  <path d="M0,650 Q300,600 600,680 Q900,620 1280,660" fill="#4169e1" opacity="0.5"/>
+  
+  <!-- Legal barriers -->
+  <g fill="#b91c1c">
+    <rect x="400" y="190" width="30" height="12"/>
+    <rect x="870" y="190" width="30" height="12"/>
+    <rect x="400" y="490" width="30" height="12"/>
+    <rect x="870" y="490" width="30" height="12"/>
+  </g>
+  
+  <!-- Info box -->
+  <g transform="translate(70, 130)">
+    <rect x="0" y="0" width="280" height="180" fill="#ffffff" stroke="#b91c1c" stroke-width="2" rx="10"/>
+    <text x="140" y="30" font-family="Arial" font-size="14" fill="#b91c1c" text-anchor="middle" font-weight="bold">CHOQUE DE DIREITOS</text>
+    <line x1="20" y1="50" x2="260" y2="50" stroke="#c0c0c0"/>
+    <text x="20" y="75" font-family="Arial" font-size="13" fill="#1a365d" font-weight="bold">Art. 6º CF/88</text>
+    <text x="20" y="95" font-family="Arial" font-size="11" fill="#4a5568">Direito à Moradia</text>
+    <text x="20" y="120" font-family="Arial" font-size="13" fill="#1a365d" font-weight="bold">vs.</text>
+    <text x="20" y="145" font-family="Arial" font-size="13" fill="#1a365d" font-weight="bold">Meio Ambiente</text>
+    <text x="20" y="168" font-family="Arial" font-size="10" fill="#b91c1c">Ponderação via PRA exigida</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="640" y="60" font-family="Arial" font-size="36" font-weight="bold" fill="#1a365d" text-anchor="middle">IMÓVEL RURAL E O EMBARGO</text>
+  <text x="640" y="105" font-family="Arial" font-size="20" fill="#4a5568" text-anchor="middle">Violação da Reserva Legal - Código Florestal</text>
+</svg>
